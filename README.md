@@ -9,6 +9,12 @@ A) Japanese Grammar summary
 
 B) Problems encountered during assignment
 
+Command to test the grammar: 
+
+```
+cat Chapter-4/translations_final.conllu | ./gfud-mac extract-pos-words | ./gfud-mac dbnf Chapter-4/English.dbnf Utt
+```
+
 - - - - - -
 A)
 
