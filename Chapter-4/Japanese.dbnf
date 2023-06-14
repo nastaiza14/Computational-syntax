@@ -14,292 +14,255 @@ Utt ::= IAdv
 Utt ::= Num
 
 -- sentences
-S ::= NP ADP VP # nsubj Adp head
-S ::= NP ADP VP neg  # nsubj Adp head neg 
-S ::= NP ADP VP aux? neg  # nsubj Adp head V_Aux neg
-S ::= NP ADP VP aux? aux? neg # nsubj Adp head V_Aux V_Aux neg
+-- plain
+S ::= NP_nom VP # nsubj head
+S ::= Comma_NP VP # advcl head
+S ::= NP_nom VP_sconj VP # nsubj ccomp head
+S ::= NP_nom S # nsubj head
+-- copulative
+S ::= S V_Aux # head aux -- xな
+S ::= S NP V_Aux # acl head aux
+S ::= NP_nom NP cop V_Aux Part? # nsubj head cop aux mark
+S ::= NP_nom NP V_Aux V_Aux? Part? # nsubj head aux aux mark
+--e.g X X である to "です"
+S ::= S Adp_loc aru # head aux fixed 
+-- sentences with adverbials 
+S ::= NP_nom Comma_AP VP # nsubj advcl head
+S ::= NP_nom Comma_AP S # nsubj advcl head
+S ::= NP NP_nom Comma_AP S # obl nsubj advcl head
+-- this is just to parse sentence 13, since it gives back a weird analysis
+--   ↓NP_nom     ↓NP_nom 
+S ::= NP Comma_AP NP Comma_AP # advcl nsubj nsubj head
+S ::= Comma_NP Sub2_S VP # nsubj ccomp head
+-- sentence with special initial adverbial (from x to x)
+S ::= NP_prep S # obl head
+-- subordinate clauses: adjective (relative), nominal and coordinate (!)
+S ::= Sub_S VP # acl head        
+S ::= Sub2_S S # ccomp head
+S ::= Sub2_S VP # obl head
+S ::= Adj_S S # acl head
+-- coordinate clauses 
+S ::= S comma VP # advcl punct head
+-- S ::= Cor_S VP # ccomp head  (this is replaced by following S)
+-- parts of coordinated clauses
+-- Cor_S ::= VP comma CConj Adp # head punct cc case (this is replaced by following S)
+-- this one replaces last two rules "あるい は" 
+-- Be careful because it is actually just a single particle: あるいは
+S ::= VP_comma CConj Adp VP # ccomp cc case head 
+-- parts of subordinate sentences 
+Sub_S ::= S Sconj # head mark
+Sub2_S ::= S Conj # head case
+-- parts of coordinate sentences (obsolete (?))
+-- equivalent to "que"/"that": (彼は君のことが好きだ とって)言っていった 　　
+Comma_NP ::= NP comma # head punct
+Comma_AP ::= AP comma # head punct
+--Cor_S ::= S Conj # acl case      -- という
 
-S ::= NP ADP AP # nsubj Adp head
-S ::= NP ADP AP cop # nsubj Adp head cop
-S ::= NP ADP NP cop # nsubj Adp head cop
-
-
-S ::= NP cop AdV? neg? Comp # nsubj cop advmod advmod head
-S ::= NP have AdV? neg? cop Comp # nsubj aux advmod advmod cop head
-S ::= NP aux AdV?  neg? have? cop Comp # nsubj aux advmod advmod aux cop head
-
-S ::= NP cop AdV? neg? VP_pass # nsubj:pass aux:pass advmod advmod head
-S ::= NP have AdV? neg? cop VP_pass # nsubj:pass aux advmod advmod aux:pass head
-S ::= NP aux AdV? neg? have? cop VP_pass # nsubj:pass aux advmod advmod aux aux:pass head
-
-S ::= there be_V AdV? neg? NP # expl head advmod advmod nsubj
-S ::= there have AdV? neg? be_V neg? NP # expl aux advmod advmod head nsubj
-S ::= there aux AdV? neg? have? be_V NP # expl aux advmod advmod aux head nsubj
-S ::= it cop AdV? neg? AP # expl cop advmod advmod head
-
-S ::= NP be_V neg? SC # nsubj head advmod ccomp
-S ::= NP have neg? be_V SC # nsubj aux advmod head ccomp
-S ::= NP aux neg? have? be_V SC # nsubj aux advmod aux head ccomp
-
-S ::= SC VP # csubj head
-S ::= SC do neg VP # csubj aux advmod head
-S ::= SC cop neg? VP_pass # csubj:pass aux:pass advmod head
-S ::= SC have neg? cop VP_pass # csubj:pass aux advmod aux:pass head
-S ::= S_front NP VS # parataxis nsubj head
-
-QS ::= do NP neg? VP # aux nsubj advmod head
-QS ::= aux NP neg? have? VP # aux nsubj advmod aux head
-QS ::= cop NP neg? Comp # cop nsubj advmod head
-QS ::= cop neg NP Comp # cop nsubj advmod head
-
-QS ::= cop NP neg? VP_pass # aux:pass nsubj:pass advmod head
-QS ::= have NP neg? cop VP_pass # aux nsubj:pass advmod aux:pass head
-QS ::= aux NP neg? have? cop VP_pass # aux nsubj:pass advmod aux:pass aux head
-
-QS ::= IP VP # nsubj head
-QS ::= IP do neg VP # nsubj aux advmod head
-QS ::= IP aux neg? have? VP # nsubj aux advmod aux head
-QS ::= IP cop neg? Comp # nsubj cop advmod head
-QS ::= IP aux neg? have? cop Comp # nsubj cop advmod aux head
-QS ::= IP do NP neg? VPSlash # obj aux nsubj advmod head
-QS ::= IP aux NP neg? have? VPSlash # obj aux nsubj advmod aux head
-
-QS ::= IP cop neg? VP_pass # nsubj:pass aux:pass advmod head
-QS ::= IP have neg? cop VP_pass # nsubj:pass aux advmod aux:pass head
-QS ::= IP aux neg? have? cop VP_pass # nsubj:pass aux advmod aux:pass aux head
-
-QS ::= IAdv do NP neg? VP # advmod aux nsubj advmod head
-QS ::= IAdv aux NP neg? have? VP # advmod aux nsubj advmod aux head
-QS ::= IAdv cop NP neg? Comp # advmod cop nsubj advmod head
-QS ::= IAdv cop neg NP Comp # advmod cop nsubj advmod head
-
-QS ::= IAdv cop NP neg? VP_pass # advmod aux:pass nsubj:pass advmod head
-
--- indirect questions
-QS ::= if S # mark head
-QS ::= IP NP does? neg? VPSlash # obj nsubj nsubj advmod head
-QS ::= IP NP aux neg? have? VPSlash # obj nsubj aux advmod aux head
-QS ::= IAdv NP do? neg? VP # advmod nsubj aux advmod head
-QS ::= IAdv NP aux neg? have? VP # advmod nsubj aux advmod aux head
-QS ::= IAdv NP cop neg? Comp # advmod nsubj cop advmod head
-
-RS ::= RP VP # nsubj head
-RS ::= RP do neg VP # nsubj aux advmod head
-RS ::= RP have neg? VP # nsubj aux advmod head
-RS ::= RP cop neg? Comp # nsubj cop advmod head
-RS ::= RP have neg? cop Comp # nsubj aux advmod cop head
-
-RS ::= RP NP VPSlash # obj nsubj head
-RS ::= RP NP do neg VPSlash # obj nsubj aux advmod head
-RS ::= NP VPSlash # nsubj head
-RS ::= NP do neg VPSlash # nsubj aux advmod head
-
--- imperatives
-Imp ::= do? neg? VP # aux advmod head
-Imp ::= do? neg? cop Comp # aux advmod cop head
-
--- sentences with adverbials
-S  ::= S_subcomma S # advcl head
-S  ::= S S_sub # head advcl
-S  ::= Adv_comma S # advmod head
-S  ::= NP_oblcomma S # nmod head
-
--- embedded sentences
-SC ::= S_that
-SC ::= QS
-SC ::= VP_to
-
-
+-- Verb phrases
+-- First build the verb and its complements and then add auxilaries (verb flection) to the phrase
 VP ::= V
-VP ::= aux # # 0.001
-VP ::= V2 NP  # head obj
-VP ::= V2 NP_obl # head obl
-VP ::= V3 NP NP # head iobj obj
-VP ::= V2C NP NP # head obj xcomp
-VP ::= V2C NP AP # head obj xcomp
-VP ::= VS S_that # head ccomp
-VP ::= VV VP_to # head xcomp
-VP ::= V2V NP VP # head obj xcomp
-VP ::= V2V NP VP_to # head obj xcomp
-VP ::= VP comma? Adv # head punct advmod
-VP ::= AdV VP # advmod head 
-VP ::= VP NP_obl # head obl # 0.001
-VP ::= VS S_direct # head parataxis
+VP ::= NP V # obl head
+--VP ::= aux # # 0.001
+-- Remember it's SOV order, verb always at the end
+VP ::= NP_acc V2 # obj head
+VP ::= NP_acc NP_dat V2 # obj obl head
+VP ::= NP_dat NP_acc V2 # obl obj head
+-- VP ::= NP_acc NP_dat V3 # obj obl head
+-- With verbs like "go", "go to X" "X に(ni) 行く(iku)" : アメリカに行く(女の子) 
+-- and as any other similar adverbial
+VP ::= NP_dat V # obl head
+--VP ::= NP_to V # obl head
+VP ::= VP V_Aux V_Aux? V_Aux? # head aux aux aux 
+--e.g. 取りかえ れば *なら* なかっ ...
+VP ::= VP V_Aux Predet V_Aux # head aux fixed aux
+-- remember to change here if VP_sconj doesn't work: before the Predet? had a "?"
+--e.g. 待っ  て　*い*　ます
+VP ::= VP Sconj Predet V_Aux? # head mark fixed aux
+--e.g. 言わ   れ    て     い     ます
+VP ::= VP V_Aux Sconj Predet V_Aux? # head aux mark fixed aux
+--e.g.　さ　れ　て　いる 
+VP ::= VP V_Aux V_Aux Sconj Predet V_Aux # head aux aux mark fixed aux
+-- Specifically for the progressive tense
+VP_sconj ::= VP V_Aux? Sconj # head aux mark
+-- VP with comma
+-- most likely going to have the て("TE") particle
+VP_comma ::= VP comma # head punct
+-- remember to change this if VP_sconj doesnt work:
+VP_comma ::= VP_sconj comma # head punct
+-- in UD the advcl is a coordinated VP
+VP ::= VP_comma VP # advcl head
+-- Adverbials that modify Verb Phrases 
+VP ::= NP_dat VP # advmod head  -- ⭐
+VP ::= NP_loc VP # advmod head
+-- CHECK
+VP ::= NP_to VP # obl head
+-- Phrase acting as an adverbial
+--VP ::= Adv_C VP # obl head
+-- TO DO:
+-- VERB + する  (which is also classified a verb)...
 
-VP_pass ::= V2
-VP_pass ::= VP_pass Adv # head advmod
-VP_pass ::= VP_pass NP_obl # head nmod
+-- Adjective clause flexed
+Adj_S ::= NP_nom AP_flex # nsubj head
+Adj_S ::= NP_nom AP_flex comma # nsubj head punct
+-- Adverbial function separated by comma
+-- Adv_C ::= NP Adp comma # head case punct    -- なんとか　まで、から、と...
+-- Adv_C ::= NP_dat comma # head punct     -- なんとか　に
+-- Adv_C ::= NP_loc comma # head punct     -- なんとか　で
 
-VPSlash ::= V2
-VPSlash ::= VPSlash NP_obl  # head obl # 0.001
-VPSlash ::= VPSlash Adv # head advmod
-VPSlash ::= VP Prep # head case # 0.001
-
-S_that ::= that? S # mark head
-
-S_direct ::= colon S # punct head
-S_direct ::= colon quote S quote # punct punct head punct
-S_front  ::= S comma # head punct
-S_front  ::= quote S quote comma # punct head punct punct
-
-Comp ::= AP
-Comp ::= NP
-Comp ::= Adv
-Comp ::= NP_obl
-Comp ::= Comp comma? NP_obl # head punct nmod
-Comp ::= Comp comma? Adv # head punct advmod
-
--- VP with to
-VP_to ::= neg? to VP # advmod mark head
-VP_to ::= neg? to cop Comp # advmod mark cop head
-
--- oblique noun phrase
-NP_obl ::= Prep NP # case head
-
--- noun phrases
+-- Noun phrases
 NP ::= PN
+CN ::= N
+-- NP ::= N
 NP ::= Pron
 NP ::= Num # # 0.1
 NP ::= Det # # 0.1
+-- if we don't take counters into account then its just Num + Noun 12人　３個 ２枚 > > OK!
+NP ::= Num CN # nummod head
+NP ::= Det CN # det head
+NP ::= N CN # compound head
+NP ::= PN CN # compound head
+NP ::= Pron CN # nmod head
+NP ::= CN Num # nmod head
+-- Case NPs: these could be avoided, since UD does not specify any case.
+NP_nom ::= NP Adp_nom # head case
+-- with comma: 
+NP_nom ::= NP Adp_nom comma # head case punct
+-- be careful with this: !!
+NP_nom ::= CN Adp_nom comma # head case punct
+NP_acc ::= NP Adp_acc # head case
+--NP_acc ::= NP? NP Adp_acc # obl head case --⭐
+NP_dat ::= NP Adp_dat # head case
+NP_loc ::= NP Adp_loc # head case
+-- CN version
+NP_nom ::= CN Adp_nom # head case
+NP_acc ::= CN Adp_acc # head case
+NP_acc ::= CN Adp_acc # head case
+NP_dat ::= CN Adp_dat # head case
+NP_loc ::= CN Adp_loc # head case
+-- from X to X : X kara X made
+NP_kara ::= NP Adp_kara # head case
+NP_made ::= NP Adp_made # head case
+NP_prep ::= NP_kara NP_made # nmod head
+NP_prep ::= NP_kara NP_made comma # nmod head punct
+-- nominalizer: VP  の　は
+NP_nom ::= VP Sconj Adp_nom # head mark case 
+-- for clausal subject
+NP_nom ::= S Adp_nom # head case
+-- To linearize fixed expression:
+--             に  よる  と
+NP ::= NP Adp_dat yoru Conj # head case fixed fixed
+NP ::= NP Adp_gen # head case
+--NP ::= NP Adp # head case -- ⭐
+NP ::= NP Part # head mark
+-- relative clauses (not used)?
+NP_rel ::= S NP # acl head
+NP_rel ::= S CN # acl head
+-- CN version
+NP ::= CN Adp_dat yoru Conj # head case fixed fixed
+NP ::= CN Adp_gen # head case
+NP ::= CN Adp # head case
+NP ::= CN Part # head mark
+NP ::= S CN # acl head
+-- special
+NP_to ::= NP Adp_to # head case
+-- for multiple "and" と modifiers
+NP ::= NP_to CN # nmod head
+NP ::= NP_to Adp_gen # head case
+NP ::= NP_loc Adp_gen # head case
+-- Adjective modifier
+NP ::= AP CN # amod head
+-- overall
+-- NP ::= NP N # nmod head
+NP ::= NP CN # nmod head
+-- Adverbs modifying Noun Phrases : this is how it's done in UD (some sentences)
+NP ::= Adv NP # advmod head -- ⭐️
+-- TO DO: Adverb modifying nominative phrase
+-- Dependent clauses
+-- S and VP may act as noun modifiers (acl) (みかん を 売っていた) 女の子 -> (VP) NP
+NP ::= VP NP # acl head
 
-NP ::= N N # nmod head
-NP ::= Det? CN # det head
-NP ::= Det? N N ADP # det nmod head Adp
-NP ::= NP comma? NP_obl # head punct nmod
-NP ::= Predet NP # det:predet head
-NP ::= NP_poss CN # nmod:poss head
-NP ::= Num NP # nummod head
-NP ::= N PN # head flat
-NP ::= NP SC # head acl
-NP ::= NP comma? S_sub # head punct acl
-NP ::= NP comma? RS # head punct acl:relcl
-NP ::= Symb Num # head nummod
-NP ::= NP comma? VP_pass # head punct acl # 0.01
-
-NP_poss ::= NP 's # head case
-NP_poss ::= Pron_poss
-
--- some very special rules ---
-NP        ::= Det CN_quoted # det head
-CN_quoted ::= quote CN quote # punct head punct
-NP        ::= NP NP_appos # head appos # 0.01
-NP_appos  ::= Punct_appos NP # punct head
-
-Num ::= Card
-Num ::= Digits
-
-CN ::= N
-CN ::= AP CN # amod head
-CN ::= CN comma? AP # head punct amod # 0.01
-
-PN ::= PN_one PN # head flat
-
-N ::= N_one N # compound head
-N ::= PN CN # compound head
-
-Card ::= Card_one Card # compound head
-
-IP ::= IDet CN # det head
-
--- adjectival phrases
+-- Adjectival phrases
 AP ::= A
-AP ::= AdA AP     # advmod head
-AP ::= AP NP_obl  # head nmod
-
--- adverbials
--- Adv ::= Prep NP # case head
-
-S_sub       ::= comma? Subj S # punct mark head
-S_subcomma  ::= Subj S comma? # mark head punct
-Adv_comma   ::= Adv comma? # head punct
-NP_oblcomma ::= NP_obl comma? # head punct
-S_sub       ::= comma? Subj VP # punct mark head # 0.1
-S_subcomma  ::= Subj VP comma? # mark head punct # 0.1
-
--- coordination
-S       ::= Conj_pre? ListS S_conj # cc:preconj head conj
-ListS   ::= S
-ListS   ::= ListS S_comma # head conj
-S_conj  ::= comma? Conj S # punct cc head
-S_comma ::= comma S # punct head
-
-NP       ::= Conj_pre? ListNP NP_conj # cc:preconj head conj
-ListNP   ::= NP
-ListNP   ::= ListNP NP_comma # head conj
-NP_conj  ::= comma? Conj NP # punct cc head
-NP_comma ::= comma NP # punct head
-
-AP       ::= Conj_pre? ListAP AP_conj # cc:preconj head conj
-ListAP   ::= AP
-ListAP   ::= ListAP AP_comma # head conj
-AP_conj  ::= comma? Conj AP # punct cc head
-AP_comma ::= comma AP # punct head
-
-VP       ::= Conj_pre? ListVP VP_conj # cc:preconj head conj
-ListVP   ::= VP
-ListVP   ::= ListVP VP_comma # head conj
-VP_conj  ::= comma? Conj VP # punct cc head
-VP_comma ::= comma VP # punct head
-
--- in Adv conjunctions, we want to include NP_obl parts: all that matters for UD is the category of the first conjunct
-Adv       ::= Conj_pre? ListAdv Adv_conj # cc:preconj head conj
-ListAdv   ::= Adv
-ListAdv   ::= ListAdv Adv_comma # head conj
-Adv_conj  ::= comma? Conj Adv # punct cc head
-Adv_conj  ::= comma? Conj NP_obl # punct cc head
-Adv_comma ::= comma Adv # punct head
-Adv_comma ::= comma NP_obl # punct head
-
-NP_obl     ::= Conj_pre? ListNP_obl Adv_conj # cc:preconj head conj
-ListNP_obl ::= NP_obl
-ListNP_obl ::= ListNP_obl Adv_comma # head conj
+-- Flexed phrases
+-- check ↓ used AP instead of A
+AP ::= AP Sconj? V_Aux? V_Aux? V_Aux # head mark aux aux aux
+AP ::= AP Sconj? V Sconj? # head mark fixed mark
+-- used specificaly (check?)
+AP_flex ::= AP Sconj? V_Aux? V_Aux? V_Aux # head mark aux aux aux
+AP_flex ::= AP Sconj? Predet Sconj? # head mark fixed mark
+-- Adjectives + dative ni に form Advebials
+AP ::= AP Adp # head case
+AP ::= AP A # amod head
+AP ::= Adv AP # advmod head
+-- for adjectives like "different FROM" と 違う　と 異なる と 一緒
+-- careful with tag "obl"
+AP ::= NP_to A # obl head
 
 
 -- POS tag configurations
-#pos AUX cop
-#pos VERB V V2 V_Aux neg
+#pos AUX cop V_Aux neg
+#pos VERB V V2 V3 Predet yoru
 #pos NOUN N
 #pos ADJ A
 #pos PROPN PN
 #pos ADV IAdv AdV
+#pos ACONJ Aconj
 #pos SCONJ Sconj
 #pos CCONJ Conj CConj
 #pos DET Det IDet
 #pos PRON Pron
-#pos PART Part
+#pos PART Part int
 #pos PUNCT Punct Punct_appos comma quote colon parenth
 #pos NUM Num
-#pos ADP Adp
+#pos ADP
 
--- structural word lexicon: normal categories
-#token Adp が の に を は で まで から と
+-- structural word lexicon: normal categories -- careful Sconj: "no"
+#token Adp_nom は が 
+#token Adp_acc を
+#token Adp_dat に
+#token Adp_gen の
+#token Adp_loc で
+#token Adp_to と
+#token Adp_kara から
+#token Adp_made まで
+#token Adp まで から だけ と のみ
 #token IAdv どこ いつ なぜ
-#token AdV 最も わずか 
+#token AdV 最も わずか 現在
 #token Det この その あの
 #token Pron 彼 僕 誰 彼女 他 私 これ それ
-#token Punct . 。 ! ? ？ 、 ！
-#token Punct_appos , : ：
+#token Punct . 。？ ！ ? !
+#token Punct_appos  : ：
 #token Conj と も
-#token Sconj て が
-#token CConj また あるいは 又 ところ しかし 然し 一方 および 及び 更に さらに そして それ　其れ すなわち 即ち もしくは
+#token Sconj て って の  
+#token Aconj く
+#token CConj また あるいは 又 ところ しかし 然し 一方 および 及び 更に さらに そして それ 其れ すなわち 即ち もしくは
 #token Num １ ２ ３ ４ ５ ６ ７ ８ ９ ０ 1 2 3 4 5 6 7 8 9 0
-#token Part か 的 っぽく ばかり まで
+#token Part か 的 っぽく ばかり まで だらけ
 
--- structural word lexicon: syncategorematic words
-#token cop な だ　です　だ　じゃ
-#token V_Aux させる ない し べき ます さ れ　まし られ される され
+-- structural word lexicon: syncategorematic words  -- NEG not used in UD nor past :/  
+#token cop な だ です じゃ でし
+#token V_Aux させる し べき ます さ れ まし られ される され ません する ない なかっ ません ず た ました れば
 #token neg ない なかっ ません ず
 #token past た ました
-#token comma 、,
+#token aru ある
+#token yoru よる
+#token int か
+#token comma , 、
 #token colon : ：
 #token quote " 「 」
-#token parenth ( ) [ ] （ ）
+#token parenth ( ) [ ] （ ） 
 
 -- content word lexicon
 #token PN ゴンドラ アダム アメリカ 深セン メキシコ リーブ ポトマック
-#token V ある する 処 選択 広がっ 攻撃 なる なら よる かかる 推定 渡る いる い 交換 行か 憤慨 基づく できる でき 存在
+#token V ある する 処 選択 広がっ 攻撃 なる よる かかる 推定 渡る いる 交換 行か 憤慨 基づく できる でき 存在 実施 話
 #token V2 履い 呼ば 綴 言わ 言っ 話 とどめ 熟知 渡る 集め 交換 伝え 連れ 取りかえ 持っ 憤慨 隠し 使用 成し遂げる しれ 生み出す 燃やさ いう
+#token V3 あげる 上げる 
 #token A 腐っ 小さな 異なる 最初 有名 かなり 珍しけ 明らか 純真な
-#token N 証人 たち 以前 力 少年 永遠 注射 市 ニュース ミナレット 警察 不 川 勇気 ら クラス 頭 上流 少女 者 圧勝 芸術 経済 犯罪 資金 可能性 つ 交通 文字 カード リン データ 奥 村 名前 学問 近く 世界 場合 社会 中毒 調査 選挙 現在 前 罰則 中 通常 町 vulcanology 軍 実現 被害 教会 とき 州 作品 それ 海岸 馬鹿 犯人 政治 自動 分 投票 長期 ファンド volcanology 声 間 約 系 説明 通り 有機 主教 こと アトロピン 人気 器 年 家 勝利 投資 命 靴 救急 階層 男の子 神経剤 すべて レトリック 火山 暴力 狭さ ％ 階級 キット 筒 一致 考え 泥 人 策略 月
+#token N 証人 たち 力 以前 少年 永遠 注射 市 ニュース ミナレット 警察 不 川 勇気 ら クラス 頭 上流 少女 者 圧勝 芸術 経済 犯罪 資金 可能性 つ 交通 文字 カード リン データ 奥 村 名前 学問 近く 世界 場合 社会 中毒 調査 選挙 現在 前 罰則 中 通常 町 vulcanology 軍 実現 被害 教会 とき 州 作品 それ 海岸 馬鹿 犯人 政治 自動 分 投票 長期 ファンド volcanology 声 間 約 系 説明 通り 有機 主教 こと アトロピン 人気 器 年 家 勝利 投資 命 靴 救急 階層 男の子 神経剤 すべて レトリック 火山 暴力 狭さ ％ 階級 キット 筒 一致 考え 泥 人 策略 月
 #token Adv 最も わずか
+#token Predet なら いる い
+#token Symb $ 円
+
+
+
 
