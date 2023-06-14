@@ -1,608 +1,611 @@
+
 # text = 彼:<PRON> ら:<NOUN> は:<ADP> 誰:<PRON> です:<AUX> か:<PART> ?:<PUNCT>
-# analyses = 2
-# parsetree = (Chunks (NP_poss (NP (NP (Pron 彼)) (SC (S_that (S (NP (NP (CN (N ら))) (NP_obl (Prep は) (NP (Pron 誰)))) (VP (aux です)))))) ('s' か)) (Punct '?'))
-# weight = 6.250000000000004e-16
-1	彼	_	PRON	_	_	0	root	_	_
-2	ら	_	NOUN	_	_	5	nsubj	_	_
-3	は	_	ADP	_	_	4	case	_	_
-4	誰	_	PRON	_	_	2	nmod	_	_
-5	です	_	AUX	_	_	1	acl	_	_
-6	か	_	PART	_	_	1	case	_	_
-7	?	_	PUNCT	_	_	1	dep	_	_
+# analyses = 3
+# parsetree = (Utt (Utt (S (NP_nom (NP (Pron 彼) (CN (N ら))) (Adp_nom は)) (NP (Pron 誰)) (V_Aux です) (Part か))) (Punct '?'))
+# weight = 1.0000000000000005e-7
+1	彼	_	PRON	_	_	2	nmod	_	_
+2	ら	_	NOUN	_	_	4	nsubj	_	_
+3	は	_	Adp	_	nom	2	case	_	_
+4	誰	_	PRON	_	_	0	root	_	_
+5	です	_	AUX	_	_	4	aux	_	_
+6	か	_	PART	_	_	4	mark	_	_
+7	?	_	PUNCT	_	_	4	punct	_	_
 
 
 
 # text = 2:<NUM> つ:<NOUN> の:<ADP> ミナレット:<NOUN> が:<ADP> ある:<VERB> 小さな:<ADJ> 町:<NOUN> だ:<AUX> 。:<PUNCT>
-# analyses = 3
-# parsetree = (Chunks (Comp (NP (NP (Num (Card '2')) (NP (CN (N つ)))) (NP_obl (Prep の) (NP (CN (N ミナレット)))))) (Prep が) (Utt (Utt (Imp (VP (VS ある) (S_that (S (NP (CN (AP (A 小さな)) (CN (N 町)))) (VP (aux だ))))))) (Punct '。')))
-# weight = 1.9531250000000016e-20
+# analyses = 5
+# parsetree = (Utt (Utt (S (S (NP_nom (NP (NP (NP (Num '2') (CN (N つ))) (Adp_gen の)) (CN (N ミナレット))) (Adp_nom が)) (VP (V ある))) (NP (AP (A 小さな)) (CN (N 町))) (V_Aux だ))) (Punct '。'))
+# weight = 6.2500000000000035e-12
 1	2	_	NUM	_	_	2	nummod	_	_
-2	つ	_	NOUN	_	_	0	root	_	_
-3	の	_	ADP	_	_	4	case	_	_
-4	ミナレット	_	NOUN	_	_	2	nmod	_	_
-5	が	_	ADP	_	_	2	dep	_	_
-6	ある	_	VERB	_	_	2	dep	_	_
+2	つ	_	NOUN	_	_	4	nmod	_	_
+3	の	_	Adp	_	gen	2	case	_	_
+4	ミナレット	_	NOUN	_	_	6	nsubj	_	_
+5	が	_	Adp	_	nom	4	case	_	_
+6	ある	_	VERB	_	_	8	acl	_	_
 7	小さな	_	ADJ	_	_	8	amod	_	_
-8	町	_	NOUN	_	_	9	nsubj	_	_
-9	だ	_	AUX	_	_	6	ccomp	_	_
-10	。	_	PUNCT	_	_	6	punct	_	_
+8	町	_	NOUN	_	_	0	root	_	_
+9	だ	_	AUX	_	_	8	aux	_	_
+10	。	_	PUNCT	_	_	8	punct	_	_
 
 
 
 # text = 僕:<PRON> は:<ADP> 泥:<NOUN> だらけ:<PART> の:<ADP> 靴:<NOUN> を:<ADP> 履い:<VERB> た:<AUX> 少年:<NOUN> だけ:<ADP> でし:<AUX> た:<AUX> 。:<PUNCT>
-# analyses = 7
-# parsetree = (Chunks (NP_poss (NP (NP (Pron 僕)) (NP_obl (Prep は) (NP (CN (N 泥))))) ('s' だらけ)) (Comp (NP_obl (Prep の) (NP (CN (N 靴))))) (Prep を) (Imp (VP (V 履い))) (Imp (cop た) (Comp (NP (CN (N 少年))))) (Prep だけ) (Utt (Utt (Imp (do でし) (VP (aux た)))) (Punct '。')))
-# weight = 3.125000000000003e-23
-1	僕	_	PRON	_	_	0	root	_	_
-2	は	_	ADP	_	_	3	case	_	_
-3	泥	_	NOUN	_	_	1	nmod	_	_
-4	だらけ	_	PART	_	_	1	case	_	_
-5	の	_	ADP	_	_	6	case	_	_
-6	靴	_	NOUN	_	_	1	dep	_	_
-7	を	_	ADP	_	_	1	dep	_	_
-8	履い	_	VERB	_	_	1	dep	_	_
-9	た	_	AUX	_	_	10	cop	_	_
-10	少年	_	NOUN	_	_	1	dep	_	_
-11	だけ	_	ADP	_	_	1	dep	_	_
-12	でし	_	AUX	_	_	13	aux	_	_
-13	た	_	AUX	_	_	1	dep	_	_
-14	。	_	PUNCT	_	_	13	punct	_	_
+# analyses = 6
+# parsetree = (Utt (Utt (S (NP_nom (NP (Pron 僕)) (Adp_nom は)) (NP (VP (VP (NP_acc (NP (NP (NP (CN (N 泥)) (Part だらけ)) (Adp_gen の)) (CN (N 靴))) (Adp_acc を)) (V2 履い)) (V_Aux た)) (NP (CN (N 少年)) (Adp だけ))) (cop でし) (V_Aux た))) (Punct '。'))
+# weight = 2.5000000000000028e-15
+1	僕	_	PRON	_	_	10	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	泥	_	NOUN	_	_	6	nmod	_	_
+4	だらけ	_	PART	_	_	3	mark	_	_
+5	の	_	Adp	_	gen	3	case	_	_
+6	靴	_	NOUN	_	_	8	obj	_	_
+7	を	_	Adp	_	acc	6	case	_	_
+8	履い	_	VERB	_	_	10	acl	_	_
+9	た	_	AUX	_	_	8	aux	_	_
+10	少年	_	NOUN	_	_	0	root	_	_
+11	だけ	_	Adp	_	_	10	case	_	_
+12	でし	_	AUX	_	_	10	cop	_	_
+13	た	_	AUX	_	_	10	aux	_	_
+14	。	_	PUNCT	_	_	10	punct	_	_
 
 
 
 # text = 深セン:<PROPN> 市:<NOUN> の:<ADP> 交通:<NOUN> 警察:<NOUN> は:<ADP> 、:<PUNCT> 以前:<NOUN> 通常:<NOUN> と:<ADP> 異なる:<ADJ> 罰則:<NOUN> を:<ADP> 選択:<VERB> し:<AUX> まし:<AUX> た:<AUX> 。:<PUNCT>
-# analyses = 7
-# parsetree = (Chunks (Comp (NP (NP (CN (N (PN 深セン) (CN (N 市))))) (NP_obl (Prep の) (NP (CN (N (N_one 交通) (N 警察))))))) (Prep は) (NP_appos (Punct_appos '、') (NP (NP (CN (N (N_one 以前) (N 通常)))) (NP_obl (Prep と) (NP (CN (AP (A 異なる)) (CN (N 罰則))))))) (Prep を) (Imp (VP (V 選択))) (Imp (do し) (VP (aux まし))) (Utt (Utt (Imp (VP (aux た)))) (Punct '。')))
-# weight = 3.9062500000000047e-31
+# analyses = 79
+# parsetree = (Utt (Utt (S (NP_nom (NP (NP (NP (NP (PN 深セン) (CN (N 市))) (Adp_gen の)) (CN (N 交通))) (CN (N 警察))) (Adp_nom は) (comma '、')) (VP (VP (NP_acc (NP (AP (NP_to (NP (N 以前) (CN (N 通常))) (Adp_to と)) (A 異なる)) (CN (N 罰則))) (Adp_acc を)) (V2 選択)) (V_Aux し) (V_Aux まし) (V_Aux た)))) (Punct '。'))
+# weight = 2.5000000000000026e-19
 1	深セン	_	PROPN	_	_	2	compound	_	_
-2	市	_	NOUN	_	_	0	root	_	_
-3	の	_	ADP	_	_	5	case	_	_
-4	交通	_	NOUN	_	_	5	compound	_	_
-5	警察	_	NOUN	_	_	2	nmod	_	_
-6	は	_	ADP	_	_	2	dep	_	_
-7	、	_	PUNCT	_	_	9	punct	_	_
+2	市	_	NOUN	_	_	4	nmod	_	_
+3	の	_	Adp	_	gen	2	case	_	_
+4	交通	_	NOUN	_	_	5	nmod	_	_
+5	警察	_	NOUN	_	_	14	nsubj	_	_
+6	は	_	Adp	_	nom	5	case	_	_
+7	、	_	PUNCT	_	_	5	punct	_	_
 8	以前	_	NOUN	_	_	9	compound	_	_
-9	通常	_	NOUN	_	_	2	dep	_	_
-10	と	_	ADP	_	_	12	case	_	_
+9	通常	_	NOUN	_	_	11	obl	_	_
+10	と	_	Adp	_	to	9	case	_	_
 11	異なる	_	ADJ	_	_	12	amod	_	_
-12	罰則	_	NOUN	_	_	9	nmod	_	_
-13	を	_	ADP	_	_	2	dep	_	_
-14	選択	_	VERB	_	_	2	dep	_	_
-15	し	_	AUX	_	_	16	aux	_	_
-16	まし	_	AUX	_	_	2	dep	_	_
-17	た	_	AUX	_	_	2	dep	_	_
-18	。	_	PUNCT	_	_	17	punct	_	_
+12	罰則	_	NOUN	_	_	14	obj	_	_
+13	を	_	Adp	_	acc	12	case	_	_
+14	選択	_	VERB	_	_	0	root	_	_
+15	し	_	AUX	_	_	14	aux	_	_
+16	まし	_	AUX	_	_	14	aux	_	_
+17	た	_	AUX	_	_	14	aux	_	_
+18	。	_	PUNCT	_	_	14	punct	_	_
 
 
 
-# text = 火山:<NOUN> の:<ADP> 学問:<NOUN> は:<ADP> volcanology:<NOUN> と:<ADP> 呼ば:<VERB> れ:<AUX> 、:<PUNCT> とき:<NOUN> に:<ADP> vulcanology:<NOUN> と:<ADP> 綴:<VERB> られる:<AUX> 。:<PUNCT>
-# analyses = 8
-# parsetree = (Chunks (Comp (NP (NP (CN (N 火山))) (NP_obl (Prep の) (NP (NP (CN (N 学問))) (NP_obl (Prep は) (NP (CN (N volcanology)))))))) (Prep と) (Imp (VP (V 呼ば))) (Utt (Utt (Imp (VP (aux れ)))) (Punct '、')) (Comp (NP (NP (CN (N とき))) (NP_obl (Prep に) (NP (CN (N vulcanology)))))) (Prep と) (Imp (VP (V 綴))) (Utt (Utt (Imp (VP (aux られる)))) (Punct '。')))
-# weight = 2.441406250000003e-30
-1	火山	_	NOUN	_	_	0	root	_	_
-2	の	_	ADP	_	_	3	case	_	_
-3	学問	_	NOUN	_	_	1	nmod	_	_
-4	は	_	ADP	_	_	5	case	_	_
-5	volcanology	_	NOUN	_	_	3	nmod	_	_
-6	と	_	ADP	_	_	1	dep	_	_
-7	呼ば	_	VERB	_	_	1	dep	_	_
-8	れ	_	AUX	_	_	1	dep	_	_
-9	、	_	PUNCT	_	_	8	punct	_	_
-10	とき	_	NOUN	_	_	1	dep	_	_
-11	に	_	ADP	_	_	12	case	_	_
-12	vulcanology	_	NOUN	_	_	10	nmod	_	_
-13	と	_	ADP	_	_	1	dep	_	_
-14	綴	_	VERB	_	_	1	dep	_	_
-15	られる	_	AUX	_	_	1	dep	_	_
-16	。	_	PUNCT	_	_	15	punct	_	_
+# text = 火山:<NOUN> の:<ADP> 学問:<NOUN> は:<ADP> volcanology:<NOUN> と:<ADP> 呼ば:<VERB> れ:<AUX> 、:<PUNCT> 時:<NOUN> に:<ADP> vulcanology:<NOUN> と:<ADP> 綴:<VERB> られる:<AUX> 。:<PUNCT>
+# analyses = 11
+# parsetree = (Utt (Utt (S (NP_nom (NP (NP (CN (N 火山)) (Adp_gen の)) (CN (N 学問))) (Adp_nom は)) (VP (VP (VP_comma (VP (VP (NP (CN (N volcanology)) (Adp と)) (V 呼ば)) (V_Aux れ)) (comma '、')) (VP (NP_dat (CN (N 時)) (Adp_dat に)) (VP (NP (CN (N vulcanology)) (Adp と)) (V 綴)))) (V_Aux られる)))) (Punct '。'))
+# weight = 3.125000000000004e-18
+1	火山	_	NOUN	_	_	3	nmod	_	_
+2	の	_	Adp	_	gen	1	case	_	_
+3	学問	_	NOUN	_	_	14	nsubj	_	_
+4	は	_	Adp	_	nom	3	case	_	_
+5	volcanology	_	NOUN	_	_	7	obl	_	_
+6	と	_	Adp	_	_	5	case	_	_
+7	呼ば	_	VERB	_	_	14	advcl	_	_
+8	れ	_	AUX	_	_	7	aux	_	_
+9	、	_	PUNCT	_	_	7	punct	_	_
+10	時	_	NOUN	_	_	14	advmod	_	_
+11	に	_	Adp	_	dat	10	case	_	_
+12	vulcanology	_	NOUN	_	_	14	obl	_	_
+13	と	_	Adp	_	_	12	case	_	_
+14	綴	_	VERB	_	_	0	root	_	_
+15	られる	_	AUX	_	_	14	aux	_	_
+16	。	_	PUNCT	_	_	14	punct	_	_
 
 
 
 # text = 4:<NUM> 月:<NOUN> から:<ADP> 6:<NUM> 月:<NOUN> まで:<ADP> 、:<PUNCT> メキシコ:<PROPN> の:<ADP> 海岸:<NOUN> の:<ADP> 近く:<NOUN> で:<ADP> 実施:<VERB> さ:<AUX> れ:<AUX> た:<AUX> 。:<PUNCT>
-# analyses = 7
-# parsetree = (Chunks (Comp (NP (NP (Num (Card '4')) (NP (CN (N 月)))) (NP_obl (Prep から) (NP (Num (Card '6')) (NP (CN (N 月))))))) (Prep まで) (NP_appos (Punct_appos '、') (NP (NP (PN メキシコ)) (NP_obl (Prep の) (NP (NP (CN (N 海岸))) (NP_obl (Prep の) (NP (CN (N 近く)))))))) (Prep で) (Imp (VP (V 実施))) (Imp (do さ) (VP (aux れ))) (Utt (Utt (Imp (VP (aux た)))) (Punct '。')))
-# weight = 1.9531250000000024e-31
+# analyses = 2
+# parsetree = (Chunks (NP_prep (NP_kara (NP (Num '4') (CN (N 月))) (Adp_kara から)) (NP_made (NP (Num '6') (CN (N 月))) (Adp_made まで)) (comma '、')) (VP_comma (VP (VP (NP_loc (NP (NP (NP (NP (NP (PN メキシコ)) (Adp_gen の)) (CN (N 海岸))) (Adp_gen の)) (CN (N 近く))) (Adp_loc で)) (VP (V 実施))) (V_Aux さ) (V_Aux れ) (V_Aux た)) (comma '。')))
+# weight = 5.000000000000006e-23
 1	4	_	NUM	_	_	2	nummod	_	_
-2	月	_	NOUN	_	_	0	root	_	_
-3	から	_	ADP	_	_	5	case	_	_
+2	月	_	NOUN	_	_	5	nmod	_	_
+3	から	_	Adp	_	kara	2	case	_	_
 4	6	_	NUM	_	_	5	nummod	_	_
-5	月	_	NOUN	_	_	2	nmod	_	_
-6	まで	_	ADP	_	_	2	dep	_	_
-7	、	_	PUNCT	_	_	8	punct	_	_
-8	メキシコ	_	PROPN	_	_	2	dep	_	_
-9	の	_	ADP	_	_	10	case	_	_
-10	海岸	_	NOUN	_	_	8	nmod	_	_
-11	の	_	ADP	_	_	12	case	_	_
-12	近く	_	NOUN	_	_	10	nmod	_	_
-13	で	_	ADP	_	_	2	dep	_	_
-14	実施	_	VERB	_	_	2	dep	_	_
-15	さ	_	AUX	_	_	16	aux	_	_
-16	れ	_	AUX	_	_	2	dep	_	_
-17	た	_	AUX	_	_	2	dep	_	_
-18	。	_	PUNCT	_	_	17	punct	_	_
+5	月	_	NOUN	_	_	0	root	_	_
+6	まで	_	Adp	_	made	5	case	_	_
+7	、	_	PUNCT	_	_	5	punct	_	_
+8	メキシコ	_	PROPN	_	_	10	nmod	_	_
+9	の	_	Adp	_	gen	8	case	_	_
+10	海岸	_	NOUN	_	_	12	nmod	_	_
+11	の	_	Adp	_	gen	10	case	_	_
+12	近く	_	NOUN	_	_	14	advmod	_	_
+13	で	_	Adp	_	loc	12	case	_	_
+14	実施	_	VERB	_	_	5	dep	_	_
+15	さ	_	AUX	_	_	14	aux	_	_
+16	れ	_	AUX	_	_	14	aux	_	_
+17	た	_	AUX	_	_	14	aux	_	_
+18	。	_	PUNCT	_	_	14	punct	_	_
 
 
 
 # text = 彼女:<PRON> の:<ADP> 声:<NOUN> は:<ADP> 文字:<NOUN> 通り:<NOUN> 世界:<NOUN> 中:<NOUN> に:<ADP> 広がっ:<VERB> た:<AUX> と:<ADP> リーブ:<PROPN> は:<ADP> 言っ:<VERB> た:<AUX> 。:<PUNCT>
-# analyses = 6
-# parsetree = (Chunks (Comp (NP (NP (Pron 彼女)) (NP_obl (Prep の) (NP (NP (CN (N 声))) (NP_obl (Prep は) (NP (CN (N (N_one 文字) (N (N_one 通り) (N (N_one 世界) (N 中))))))))))) (Prep に) (Imp (VP (V 広がっ))) (VPSlash (VP (VP (aux た)) (NP_obl (Prep と) (NP (PN リーブ)))) (Prep は)) (Imp (VP (V 言っ))) (Utt (Utt (Imp (VP (aux た)))) (Punct '。')))
-# weight = 3.125000000000004e-35
-1	彼女	_	PRON	_	_	0	root	_	_
-2	の	_	ADP	_	_	3	case	_	_
-3	声	_	NOUN	_	_	1	nmod	_	_
-4	は	_	ADP	_	_	8	case	_	_
-5	文字	_	NOUN	_	_	8	compound	_	_
-6	通り	_	NOUN	_	_	8	compound	_	_
-7	世界	_	NOUN	_	_	8	compound	_	_
-8	中	_	NOUN	_	_	3	nmod	_	_
-9	に	_	ADP	_	_	1	dep	_	_
-10	広がっ	_	VERB	_	_	1	dep	_	_
-11	た	_	AUX	_	_	1	dep	_	_
-12	と	_	ADP	_	_	13	case	_	_
-13	リーブ	_	PROPN	_	_	11	obl	_	_
-14	は	_	ADP	_	_	11	case	_	_
-15	言っ	_	VERB	_	_	1	dep	_	_
-16	た	_	AUX	_	_	1	dep	_	_
-17	。	_	PUNCT	_	_	16	punct	_	_
+# analyses = 16
+# parsetree = (Utt (Utt (S (S (Sub2_S (S (NP_nom (NP (NP (NP (Pron 彼女)) (Adp_gen の)) (CN (N 声))) (Adp_nom は)) (VP (VP (NP_dat (NP (NP (NP (N 文字) (CN (N 通り))) (CN (N 世界))) (CN (N 中))) (Adp_dat に)) (V 広がっ)) (V_Aux た))) (Conj と)) (S (NP_nom (NP (PN リーブ)) (Adp_nom は)) (VP (V 言っ)))) (V_Aux た))) (Punct '。'))
+# weight = 7.812500000000009e-20
+1	彼女	_	PRON	_	_	3	nmod	_	_
+2	の	_	Adp	_	gen	1	case	_	_
+3	声	_	NOUN	_	_	10	nsubj	_	_
+4	は	_	Adp	_	nom	3	case	_	_
+5	文字	_	NOUN	_	_	6	compound	_	_
+6	通り	_	NOUN	_	_	7	nmod	_	_
+7	世界	_	NOUN	_	_	8	nmod	_	_
+8	中	_	NOUN	_	_	10	obl	_	_
+9	に	_	Adp	_	dat	8	case	_	_
+10	広がっ	_	VERB	_	_	15	ccomp	_	_
+11	た	_	AUX	_	_	10	aux	_	_
+12	と	_	CCONJ	_	_	10	case	_	_
+13	リーブ	_	PROPN	_	_	15	nsubj	_	_
+14	は	_	Adp	_	nom	13	case	_	_
+15	言っ	_	VERB	_	_	0	root	_	_
+16	た	_	AUX	_	_	15	aux	_	_
+17	。	_	PUNCT	_	_	15	punct	_	_
 
 
 
 # text = 証人:<NOUN> は:<ADP> 、:<PUNCT> 被害:<NOUN> 者:<NOUN> が:<ADP> 4:<NUM> 月:<NOUN> に:<ADP> 犯人:<NOUN> を:<ADP> 攻撃:<VERB> し:<AUX> た:<AUX> と:<ADP> 警察:<NOUN> に:<ADP> 話:<VERB> た:<AUX> 。:<PUNCT>
-# analyses = 9
-# parsetree = (Chunks (CN (N 証人)) (Prep は) (NP_appos (Punct_appos '、') (NP (NP (CN (N (N_one 被害) (N 者)))) (NP_obl (Prep が) (NP (NP (Num (Card '4')) (NP (CN (N 月)))) (NP_obl (Prep に) (NP (CN (N 犯人)))))))) (Prep を) (Imp (VP (V 攻撃))) (Imp (do し) (VP (VP (aux た)) (NP_obl (Prep と) (NP (CN (N 警察)))))) (Prep に) (Imp (VP (V 話))) (Utt (Utt (Imp (VP (aux た)))) (Punct '。')))
-# weight = 1.5625000000000025e-35
-1	証人	_	NOUN	_	_	0	root	_	_
-2	は	_	ADP	_	_	1	dep	_	_
-3	、	_	PUNCT	_	_	5	punct	_	_
+# analyses = 861
+# parsetree = (Utt (Utt (S (NP_nom (CN (N 証人)) (Adp_nom は) (comma '、')) (S (S (Sub2_S (S (NP_nom (NP (N 被害) (CN (N 者))) (Adp_nom が)) (VP (VP (NP_dat (NP (Num '4') (CN (N 月))) (Adp_dat に)) (NP_acc (CN (N 犯人)) (Adp_acc を)) (V2 攻撃)) (V_Aux し) (V_Aux た))) (Conj と)) (VP (NP_dat (CN (N 警察)) (Adp_dat に)) (V 話))) (V_Aux た)))) (Punct '。'))
+# weight = 2.5000000000000032e-21
+1	証人	_	NOUN	_	_	18	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	、	_	PUNCT	_	_	1	punct	_	_
 4	被害	_	NOUN	_	_	5	compound	_	_
-5	者	_	NOUN	_	_	1	dep	_	_
-6	が	_	ADP	_	_	8	case	_	_
+5	者	_	NOUN	_	_	12	nsubj	_	_
+6	が	_	Adp	_	nom	5	case	_	_
 7	4	_	NUM	_	_	8	nummod	_	_
-8	月	_	NOUN	_	_	5	nmod	_	_
-9	に	_	ADP	_	_	10	case	_	_
-10	犯人	_	NOUN	_	_	8	nmod	_	_
-11	を	_	ADP	_	_	1	dep	_	_
-12	攻撃	_	VERB	_	_	1	dep	_	_
-13	し	_	AUX	_	_	14	aux	_	_
-14	た	_	AUX	_	_	1	dep	_	_
-15	と	_	ADP	_	_	16	case	_	_
-16	警察	_	NOUN	_	_	14	obl	_	_
-17	に	_	ADP	_	_	1	dep	_	_
-18	話	_	VERB	_	_	1	dep	_	_
-19	た	_	AUX	_	_	1	dep	_	_
-20	。	_	PUNCT	_	_	19	punct	_	_
+8	月	_	NOUN	_	_	12	obl	_	_
+9	に	_	Adp	_	dat	8	case	_	_
+10	犯人	_	NOUN	_	_	12	obj	_	_
+11	を	_	Adp	_	acc	10	case	_	_
+12	攻撃	_	VERB	_	_	18	obl	_	_
+13	し	_	AUX	_	_	12	aux	_	_
+14	た	_	AUX	_	_	12	aux	_	_
+15	と	_	CCONJ	_	_	12	case	_	_
+16	警察	_	NOUN	_	_	18	obl	_	_
+17	に	_	Adp	_	dat	16	case	_	_
+18	話	_	VERB	_	_	0	root	_	_
+19	た	_	AUX	_	_	18	aux	_	_
+20	。	_	PUNCT	_	_	18	punct	_	_
 
 
 
-# text = 最初:<ADJ> から:<ADP> 有名:<ADJ> 人:<NOUN> の:<ADP> 名前:<NOUN> が:<ADP> かなり:<ADJ> 珍しけ:<ADJ> れば:<AUX> 、:<PUNCT> それ:<NOUN> は:<ADP> 最も:<ADV> 明らか:<ADJ> に:<ADP> なる:<VERB> 。:<PUNCT>
-# analyses = 10
-# parsetree = (Chunks (AP (AP (A 最初)) (NP_obl (Prep から) (NP (NP (CN (AP (A 有名)) (CN (N 人)))) (NP_obl (Prep の) (NP (CN (N 名前))))))) (Prep が) (A かなり) (A 珍しけ) (Utt (Utt (Imp (VP (aux れば)))) (Punct '、')) (CN (N それ)) (Prep は) (AP (AdA 最も) (AP (A 明らか))) (Prep に) (Utt (Utt (Imp (VP (V なる)))) (Punct '。')))
-# weight = 1.2500000000000019e-26
-1	最初	_	ADJ	_	_	0	root	_	_
-2	から	_	ADP	_	_	4	case	_	_
+# text = 最初:<ADJ> から:<ADP> 有名:<ADJ> 人:<NOUN> の:<ADP> 名前:<NOUN> が:<ADP> かなり:<ADJ> 珍しけ:<ADJ> れば:<AUX> 、:<PUNCT> それ:<NOUN> は:<ADP> 最も:<ADV> 明らか:<ADJ> に:<ADP> なる:<VERB> .:<PUNCT>
+# analyses = 5
+# parsetree = (Chunks (Adj_S (NP_nom (NP (NP (NP (AP (AP (AP (A 最初)) (Adp から)) (A 有名)) (CN (N 人))) (Adp_gen の)) (CN (N 名前))) (Adp_nom が)) (AP_flex (AP (AP (A かなり)) (A 珍しけ)) (V_Aux れば)) (comma '、')) (NP_nom (NP (Pron それ)) (Adp_nom は)) (AP (Adv 最も) (AP (A 明らか))) (Adp_dat に) (VP_comma (VP (V なる)) (comma '.')))
+# weight = 5.0000000000000073e-23
+1	最初	_	ADJ	_	_	3	amod	_	_
+2	から	_	Adp	_	_	1	case	_	_
 3	有名	_	ADJ	_	_	4	amod	_	_
-4	人	_	NOUN	_	_	1	nmod	_	_
-5	の	_	ADP	_	_	6	case	_	_
-6	名前	_	NOUN	_	_	4	nmod	_	_
-7	が	_	ADP	_	_	1	dep	_	_
-8	かなり	_	ADJ	_	_	1	dep	_	_
-9	珍しけ	_	ADJ	_	_	1	dep	_	_
-10	れば	_	AUX	_	_	1	dep	_	_
-11	、	_	PUNCT	_	_	10	punct	_	_
-12	それ	_	NOUN	_	_	1	dep	_	_
-13	は	_	ADP	_	_	1	dep	_	_
-14	最も	_	ADV	_	_	15	advmod	_	_
-15	明らか	_	ADJ	_	_	1	dep	_	_
-16	に	_	ADP	_	_	1	dep	_	_
-17	なる	_	VERB	_	_	1	dep	_	_
-18	。	_	PUNCT	_	_	17	punct	_	_
+4	人	_	NOUN	_	_	6	nmod	_	_
+5	の	_	Adp	_	gen	4	case	_	_
+6	名前	_	NOUN	_	_	9	nsubj	_	_
+7	が	_	Adp	_	nom	6	case	_	_
+8	かなり	_	ADJ	_	_	9	amod	_	_
+9	珍しけ	_	ADJ	_	_	0	root	_	_
+10	れば	_	AUX	_	_	9	aux	_	_
+11	、	_	PUNCT	_	_	9	punct	_	_
+12	それ	_	PRON	_	_	9	dep	_	_
+13	は	_	Adp	_	nom	12	case	_	_
+14	最も	_	Adv	_	_	15	advmod	_	_
+15	明らか	_	ADJ	_	_	9	dep	_	_
+16	に	_	Adp	_	dat	9	dep	_	_
+17	なる	_	VERB	_	_	9	dep	_	_
+18	.	_	PUNCT	_	_	17	punct	_	_
 
 
 
-# text = これ:<PRON> は:<ADP> 、:<PUNCT> 投資:<NOUN> 家:<NOUN> に:<ADP> 資金:<NOUN> を:<ADP> ファンド:<NOUN> に:<ADP> とどめ:<VERB> させる:<AUX> こと:<NOUN> に:<ADP> は:<ADP> なら:<VERB> ない:<AUX> 。:<PUNCT>
-# analyses = 10
-# parsetree = (Chunks (Comp (NP (Pron これ))) (Prep は) (NP_appos (Punct_appos '、') (NP (NP (CN (N (N_one 投資) (N 家)))) (NP_obl (Prep に) (NP (NP (CN (N 資金))) (NP_obl (Prep を) (NP (CN (N ファンド)))))))) (Prep に) (Imp (VP (V とどめ))) (Imp (cop させる) (Comp (NP (CN (N こと))))) (Prep に) (Prep は) (Imp (VP (V なら))) (Utt (Utt (Imp (VP (aux ない)))) (Punct '。')))
-# weight = 7.812500000000009e-28
-1	これ	_	PRON	_	_	0	root	_	_
-2	は	_	ADP	_	_	1	dep	_	_
-3	、	_	PUNCT	_	_	5	punct	_	_
+# text = これ:<PRON> は:<ADP> 、:<PUNCT> 投資:<NOUN> 家:<NOUN> に:<ADP> 資金:<NOUN> を:<ADP> ファンド:<NOUN> に:<ADP> とどめ:<VERB> させる:<AUX> こと:<NOUN> に:<ADP> は:<ADP> なら:<VERB> ない:<AUX> .:<PUNCT>
+# analyses = 3
+# parsetree = (Chunks (NP_dat (NP (S (NP_nom (NP (Pron これ)) (Adp_nom は) (comma '、')) (VP (VP (NP_dat (NP (N 投資) (CN (N 家))) (Adp_dat に)) (VP (NP_acc (CN (N 資金)) (Adp_acc を)) (NP_dat (CN (N ファンド)) (Adp_dat に)) (V2 とどめ))) (V_Aux させる))) (CN (N こと))) (Adp_dat に)) (Adp_nom は) (VP_comma (VP (VP (V なら)) (V_Aux ない)) (comma '.')))
+# weight = 5.0000000000000085e-23
+1	これ	_	PRON	_	_	11	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	、	_	PUNCT	_	_	1	punct	_	_
 4	投資	_	NOUN	_	_	5	compound	_	_
-5	家	_	NOUN	_	_	1	dep	_	_
-6	に	_	ADP	_	_	7	case	_	_
-7	資金	_	NOUN	_	_	5	nmod	_	_
-8	を	_	ADP	_	_	9	case	_	_
-9	ファンド	_	NOUN	_	_	7	nmod	_	_
-10	に	_	ADP	_	_	1	dep	_	_
-11	とどめ	_	VERB	_	_	1	dep	_	_
-12	させる	_	AUX	_	_	13	cop	_	_
-13	こと	_	NOUN	_	_	1	dep	_	_
-14	に	_	ADP	_	_	1	dep	_	_
-15	は	_	ADP	_	_	1	dep	_	_
-16	なら	_	VERB	_	_	1	dep	_	_
-17	ない	_	AUX	_	_	1	dep	_	_
-18	。	_	PUNCT	_	_	17	punct	_	_
+5	家	_	NOUN	_	_	11	advmod	_	_
+6	に	_	Adp	_	dat	5	case	_	_
+7	資金	_	NOUN	_	_	11	obj	_	_
+8	を	_	Adp	_	acc	7	case	_	_
+9	ファンド	_	NOUN	_	_	11	obl	_	_
+10	に	_	Adp	_	dat	9	case	_	_
+11	とどめ	_	VERB	_	_	13	acl	_	_
+12	させる	_	AUX	_	_	11	aux	_	_
+13	こと	_	NOUN	_	_	0	root	_	_
+14	に	_	Adp	_	dat	13	case	_	_
+15	は	_	Adp	_	nom	13	dep	_	_
+16	なら	_	VERB	_	_	13	dep	_	_
+17	ない	_	AUX	_	_	16	aux	_	_
+18	.	_	PUNCT	_	_	16	punct	_	_
 
 
 
-# text = この:<DET> 経済:<NOUN> データ:<NOUN> と:<ADP> 政治:<NOUN> 的:<PART> レトリック:<NOUN> と:<ADP> の:<ADP> 間:<NOUN> の:<ADP> 不:<NOUN> 一致:<NOUN> を:<ADP> 熟知:<VERB> し:<AUX> て:<SCONJ> いる:<VERB> 、:<PUNCT> あるい:<CCONJ> は:<ADP> ある:<VERB> べき:<AUX> で:<AUX> ある:<VERB> 。:<PUNCT>
-# analyses = 12
-# parsetree = (Chunks (Comp (NP (NP (Det この) (CN (N (N_one 経済) (N データ)))) (NP_obl (Prep と) (NP (NP_poss (NP (CN (N 政治))) ('s' 的)) (CN (N レトリック)))))) (Prep と) (Comp (NP_obl (Prep の) (NP (NP (CN (N 間))) (NP_obl (Prep の) (NP (CN (N (N_one 不) (N 一致)))))))) (Prep を) (Imp (VP (V 熟知))) (Imp (VP (aux し))) (S_subcomma (Subj て) (VP (V いる)) (comma '、')) (Conj あるい) (Prep は) (Imp (VP (V ある))) (Imp (do べき) (VP (aux で))) (Utt (Utt (Imp (VP (V ある)))) (Punct '。')))
-# weight = 3.125000000000006e-39
-1	この	_	DET	_	_	3	det	_	_
-2	経済	_	NOUN	_	_	3	compound	_	_
-3	データ	_	NOUN	_	_	0	root	_	_
-4	と	_	ADP	_	_	7	case	_	_
-5	政治	_	NOUN	_	_	7	nmod:poss	_	_
-6	的	_	PART	_	_	5	case	_	_
-7	レトリック	_	NOUN	_	_	3	nmod	_	_
-8	と	_	ADP	_	_	3	dep	_	_
-9	の	_	ADP	_	_	10	case	_	_
-10	間	_	NOUN	_	_	3	dep	_	_
-11	の	_	ADP	_	_	13	case	_	_
-12	不	_	NOUN	_	_	13	compound	_	_
-13	一致	_	NOUN	_	_	10	nmod	_	_
-14	を	_	ADP	_	_	3	dep	_	_
-15	熟知	_	VERB	_	_	3	dep	_	_
-16	し	_	AUX	_	_	3	dep	_	_
-17	て	_	SCONJ	_	_	18	mark	_	_
-18	いる	_	VERB	_	_	3	dep	_	_
-19	、	_	PUNCT	_	_	18	punct	_	_
-20	あるい	_	CCONJ	_	_	3	dep	_	_
-21	は	_	ADP	_	_	3	dep	_	_
-22	ある	_	VERB	_	_	3	dep	_	_
-23	べき	_	AUX	_	_	24	aux	_	_
-24	で	_	AUX	_	_	3	dep	_	_
-25	ある	_	VERB	_	_	3	dep	_	_
-26	。	_	PUNCT	_	_	25	punct	_	_
+# text = この:<DET> 経済:<NOUN> データ:<NOUN> と:<ADP> 政治:<NOUN> 的:<PART> レトリック:<NOUN> と:<ADP> の:<ADP> 間:<NOUN> の:<ADP> 不:<NOUN> 一致:<NOUN> を:<ADP> 熟知:<VERB> し:<AUX> て:<SCONJ> いる:<VERB> 、:<PUNCT> あるい:<CCONJ> は:<ADP> ある:<VERB> べき:<AUX> で:<AUX> ある:<VERB> .:<PUNCT>
+# analyses = 5
+# parsetree = (Chunks (VP_comma (VP (VP (VP (NP_acc (NP (NP (NP (NP (NP (NP_to (NP (NP (NP (NP_to (NP (NP (Det この) (CN (N 経済))) (CN (N データ))) (Adp_to と)) (CN (N 政治))) (Part 的)) (CN (N レトリック))) (Adp_to と)) (Adp_gen の)) (CN (N 間))) (Adp_gen の)) (CN (N 不))) (CN (N 一致))) (Adp_acc を)) (V2 熟知)) (V_Aux し)) (Sconj て) (Predet いる)) (comma '、')) (CConj あるい) (Adp_nom は) (VP (VP (V ある)) (V_Aux べき) (V_Aux で)) (VP_comma (VP (V ある)) (comma '.')))
+# weight = 2.500000000000004e-31
+1	この	_	DET	_	_	2	det	_	_
+2	経済	_	NOUN	_	_	3	nmod	_	_
+3	データ	_	NOUN	_	_	5	nmod	_	_
+4	と	_	Adp	_	to	3	case	_	_
+5	政治	_	NOUN	_	_	7	nmod	_	_
+6	的	_	PART	_	_	5	mark	_	_
+7	レトリック	_	NOUN	_	_	10	nmod	_	_
+8	と	_	Adp	_	to	7	case	_	_
+9	の	_	Adp	_	gen	7	case	_	_
+10	間	_	NOUN	_	_	12	nmod	_	_
+11	の	_	Adp	_	gen	10	case	_	_
+12	不	_	NOUN	_	_	13	nmod	_	_
+13	一致	_	NOUN	_	_	15	obj	_	_
+14	を	_	Adp	_	acc	13	case	_	_
+15	熟知	_	VERB	_	_	0	root	_	_
+16	し	_	AUX	_	_	15	aux	_	_
+17	て	_	SCONJ	_	_	15	mark	_	_
+18	いる	_	VERB	_	_	15	fixed	_	_
+19	、	_	PUNCT	_	_	15	punct	_	_
+20	あるい	_	CCONJ	_	_	15	dep	_	_
+21	は	_	Adp	_	nom	15	dep	_	_
+22	ある	_	VERB	_	_	15	dep	_	_
+23	べき	_	AUX	_	_	22	aux	_	_
+24	で	_	AUX	_	_	22	aux	_	_
+25	ある	_	VERB	_	_	15	dep	_	_
+26	.	_	PUNCT	_	_	25	punct	_	_
 
 
 
 # text = 実現:<NOUN> 可能性:<NOUN> 調査:<NOUN> に:<ADP> よる:<VERB> と:<ADP> 、:<PUNCT> ゴンドラ:<PROPN> で:<ADP> ポトマック:<PROPN> 川:<NOUN> を:<ADP> 渡る:<VERB> の:<SCONJ> は:<ADP> 約:<NOUN> 4:<NUM> 分:<NOUN> かかる:<VERB> と:<ADP> 推定:<VERB> さ:<AUX> れ:<AUX> て:<SCONJ> い:<VERB> ます:<AUX> 。:<PUNCT>
-# analyses = 6
-# parsetree = (Chunks (CN (N (N_one 実現) (N (N_one 可能性) (N 調査)))) (Prep に) (VPSlash (VP (V よる)) (Prep と)) (NP_appos (Punct_appos '、') (NP (NP (PN ゴンドラ)) (NP_obl (Prep で) (NP (CN (N (PN ポトマック) (CN (N 川)))))))) (Prep を) (Utt (Utt (Imp (VP (VS 渡る) (S_that (that の) (S (SC (S_that (S (S (SC (S_that (S (SC (S_that (S (NP_oblcomma (NP_obl (Prep は) (NP (CN (N 約))))) (S (NP (NP (Num (Card '4'))) (RS (NP (CN (N 分))) (VPSlash (VP (V かかる)) (Prep と)))) (VP (V 推定)))))) (VP (aux さ))))) (VP (aux れ))) (S_sub (Subj て) (VP (V い)))))) (VP (aux ます))))))) (Punct '。')))
-# weight = 6.103515625000016e-53
-1	実現	_	NOUN	_	_	3	compound	_	_
-2	可能性	_	NOUN	_	_	3	compound	_	_
-3	調査	_	NOUN	_	_	0	root	_	_
-4	に	_	ADP	_	_	3	dep	_	_
-5	よる	_	VERB	_	_	3	dep	_	_
-6	と	_	ADP	_	_	5	case	_	_
-7	、	_	PUNCT	_	_	8	punct	_	_
-8	ゴンドラ	_	PROPN	_	_	3	dep	_	_
-9	で	_	ADP	_	_	11	case	_	_
-10	ポトマック	_	PROPN	_	_	11	compound	_
-11	川	_	NOUN	_	_	8	nmod	_	_
-12	を	_	ADP	_	_	3	dep	_	_
-13	渡る	_	VERB	_	_	3	dep	_	_
-14	の	_	SCONJ	_	_	26	mark	_	_
-15	は	_	ADP	_	_	16	case	_	_
-16	約	_	NOUN	_	_	21	nmod	_	_
-17	4	_	NUM	_	_	21	nsubj	_	_
-18	分	_	NOUN	_	_	19	nsubj	_	_
-19	かかる	_	VERB	_	_	17	acl:relcl	_	_
-20	と	_	ADP	_	_	19	case	_	_
-21	推定	_	VERB	_	_	22	csubj	_	_
-22	さ	_	AUX	_	_	23	csubj	_	_
-23	れ	_	AUX	_	_	26	csubj	_	_
-24	て	_	SCONJ	_	_	25	mark	_	_
-25	い	_	VERB	_	_	23	advcl	_	_
-26	ます	_	AUX	_	_	13	ccomp	_	_
-27	。	_	PUNCT	_	_	13	punct	_	_
+# analyses = 47
+# parsetree = (Utt (Utt (S (S (Comma_NP (NP (NP (NP (N 実現) (CN (N 可能性))) (CN (N 調査))) (Adp_dat に) (yoru よる) (Conj と)) (comma '、')) (Sub2_S (S (NP_nom (VP (NP_loc (NP (PN ゴンドラ)) (Adp_loc で)) (VP (NP_acc (NP (PN ポトマック) (CN (N 川))) (Adp_acc を)) (V2 渡る))) (Sconj の) (Adp_nom は)) (VP (NP (NP (CN (N 約)) (Num '4')) (CN (N 分))) (V かかる))) (Conj と)) (VP (VP (VP (V 推定)) (V_Aux さ) (V_Aux れ)) (Sconj て) (Predet い))) (V_Aux ます))) (Punct '。'))
+# weight = 5.00000000000001e-28
+1	実現	_	NOUN	_	_	2	compound	_	_
+2	可能性	_	NOUN	_	_	3	nmod	_	_
+3	調査	_	NOUN	_	_	21	nsubj	_	_
+4	に	_	Adp	_	dat	3	case	_	_
+5	よる	_	VERB	_	_	3	fixed	_	_
+6	と	_	CCONJ	_	_	3	fixed	_	_
+7	、	_	PUNCT	_	_	3	punct	_	_
+8	ゴンドラ	_	PROPN	_	_	13	advmod	_	_
+9	で	_	Adp	_	loc	8	case	_	_
+10	ポトマック	_	PROPN	_	_	11	compound	_	_
+11	川	_	NOUN	_	_	13	obj	_	_
+12	を	_	Adp	_	acc	11	case	_	_
+13	渡る	_	VERB	_	_	19	nsubj	_	_
+14	の	_	SCONJ	_	_	13	mark	_	_
+15	は	_	Adp	_	nom	13	case	_	_
+16	約	_	NOUN	_	_	17	nmod	_	_
+17	4	_	NUM	_	_	18	nmod	_	_
+18	分	_	NOUN	_	_	19	obl	_	_
+19	かかる	_	VERB	_	_	21	ccomp	_	_
+20	と	_	CCONJ	_	_	19	case	_	_
+21	推定	_	VERB	_	_	0	root	_	_
+22	さ	_	AUX	_	_	21	aux	_	_
+23	れ	_	AUX	_	_	21	aux	_	_
+24	て	_	SCONJ	_	_	21	mark	_	_
+25	い	_	VERB	_	_	21	fixed	_	_
+26	ます	_	AUX	_	_	21	aux	_	_
+27	。	_	PUNCT	_	_	21	punct	_	_
 
 
 
 # text = 彼:<PRON> は:<ADP> カード:<NOUN> を:<ADP> 集め:<VERB> て:<SCONJ> 他:<PRON> の:<ADP> 男の子:<NOUN> たち:<NOUN> と:<ADP> 交換:<VERB> し:<AUX> まし:<AUX> た:<AUX> 。:<PUNCT>
-# analyses = 9
-# parsetree = (Chunks (Comp (NP (NP (Pron 彼)) (NP_obl (Prep は) (NP (CN (N カード)))))) (Prep を) (Imp (VP (V 集め))) (Subj て) (Comp (NP (NP (Pron 他)) (NP_obl (Prep の) (NP (CN (N (N_one 男の子) (N たち))))))) (Prep と) (Imp (VP (V 交換))) (Imp (do し) (VP (aux まし))) (Utt (Utt (Imp (VP (aux た)))) (Punct '。')))
-# weight = 3.125000000000004e-28
-1	彼	_	PRON	_	_	0	root	_	_
-2	は	_	ADP	_	_	3	case	_	_
-3	カード	_	NOUN	_	_	1	nmod	_	_
-4	を	_	ADP	_	_	1	dep	_	_
-5	集め	_	VERB	_	_	1	dep	_	_
-6	て	_	SCONJ	_	_	1	dep	_	_
-7	他	_	PRON	_	_	1	dep	_	_
-8	の	_	ADP	_	_	10	case	_	_
-9	男の子	_	NOUN	_	_	10	compound	_	_
-10	たち	_	NOUN	_	_	7	nmod	_	_
-11	と	_	ADP	_	_	1	dep	_	_
-12	交換	_	VERB	_	_	1	dep	_	_
-13	し	_	AUX	_	_	14	aux	_	_
-14	まし	_	AUX	_	_	1	dep	_	_
-15	た	_	AUX	_	_	1	dep	_	_
-16	。	_	PUNCT	_	_	15	punct	_	_
+# analyses = 113
+# parsetree = (Utt (Utt (S (NP_nom (NP (Pron 彼)) (Adp_nom は)) (VP_sconj (VP (NP_acc (CN (N カード)) (Adp_acc を)) (V2 集め)) (Sconj て)) (VP (VP (NP_to (NP (NP (NP (NP (Pron 他)) (Adp_gen の)) (CN (N 男の子))) (CN (N たち))) (Adp_to と)) (VP (V 交換))) (V_Aux し) (V_Aux まし) (V_Aux た)))) (Punct '。'))
+# weight = 1.2500000000000014e-17
+1	彼	_	PRON	_	_	12	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	カード	_	NOUN	_	_	5	obj	_	_
+4	を	_	Adp	_	acc	3	case	_	_
+5	集め	_	VERB	_	_	12	ccomp	_	_
+6	て	_	SCONJ	_	_	5	mark	_	_
+7	他	_	PRON	_	_	9	nmod	_	_
+8	の	_	Adp	_	gen	7	case	_	_
+9	男の子	_	NOUN	_	_	10	nmod	_	_
+10	たち	_	NOUN	_	_	12	obl	_	_
+11	と	_	Adp	_	to	10	case	_	_
+12	交換	_	VERB	_	_	0	root	_	_
+13	し	_	AUX	_	_	12	aux	_	_
+14	まし	_	AUX	_	_	12	aux	_	_
+15	た	_	AUX	_	_	12	aux	_	_
+16	。	_	PUNCT	_	_	12	punct	_	_
 
 
 
 # text = この:<DET> 犯罪:<NOUN> は:<ADP> 5:<PRON> 年:<NOUN> に:<ADP> 処:<VERB> さ:<AUX> れ:<AUX> ます:<AUX> 。:<PUNCT>
-# analyses = 5
-# parsetree = (Chunks (Comp (NP (NP (Det この) (CN (N 犯罪))) (NP_obl (Prep は) (NP (NP_poss (Pron_poss '5')) (CN (N 年)))))) (Prep に) (Imp (VP (V 処))) (Imp (do さ) (VP (aux れ))) (Utt (Utt (Imp (VP (aux ます)))) (Punct '。')))
-# weight = 1.250000000000001e-22
+# analyses = 313
+# parsetree = (Utt (Utt (S (NP_nom (NP (Det この) (CN (N 犯罪))) (Adp_nom は)) (VP (VP (NP_dat (NP (Num '5') (CN (N 年))) (Adp_dat に)) (V 処)) (V_Aux さ) (V_Aux れ) (V_Aux ます)))) (Punct '。'))
+# weight = 1.0000000000000007e-11
 1	この	_	DET	_	_	2	det	_	_
-2	犯罪	_	NOUN	_	_	0	root	_	_
-3	は	_	ADP	_	_	5	case	_	_
-4	5	_	PRON	_	_	5	nmod:poss	_	_
-5	年	_	NOUN	_	_	2	nmod	_	_
-6	に	_	ADP	_	_	2	dep	_	_
-7	処	_	VERB	_	_	2	dep	_	_
-8	さ	_	AUX	_	_	9	aux	_	_
-9	れ	_	AUX	_	_	2	dep	_	_
-10	ます	_	AUX	_	_	2	dep	_	_
-11	。	_	PUNCT	_	_	10	punct	_	_
+2	犯罪	_	NOUN	_	_	7	nsubj	_	_
+3	は	_	Adp	_	nom	2	case	_	_
+4	5	_	NUM	_	_	5	nummod	_	_
+5	年	_	NOUN	_	_	7	obl	_	_
+6	に	_	Adp	_	dat	5	case	_	_
+7	処	_	VERB	_	_	0	root	_	_
+8	さ	_	AUX	_	_	7	aux	_	_
+9	れ	_	AUX	_	_	7	aux	_	_
+10	ます	_	AUX	_	_	7	aux	_	_
+11	。	_	PUNCT	_	_	7	punct	_	_
 
 
 
 # text = この:<DET> ニュース:<NOUN> は:<ADP> 、:<PUNCT> その:<DET> 州:<NOUN> の:<ADP> すべて:<NOUN> の:<ADP> 村:<NOUN> に:<ADP> 伝え:<VERB> られ:<AUX> まし:<AUX> た:<AUX> 。:<PUNCT>
-# analyses = 7
-# parsetree = (Chunks (Comp (NP (Det この) (CN (N ニュース)))) (Prep は) (NP_appos (Punct_appos '、') (NP (NP (Det その) (CN (N 州))) (NP_obl (Prep の) (NP (NP (CN (N すべて))) (NP_obl (Prep の) (NP (CN (N 村)))))))) (Prep に) (Imp (VP (V 伝え))) (Imp (do られ) (VP (aux まし))) (Utt (Utt (Imp (VP (aux た)))) (Punct '。')))
-# weight = 6.250000000000007e-28
+# analyses = 157
+# parsetree = (Utt (Utt (S (NP_nom (NP (Det この) (CN (N ニュース))) (Adp_nom は) (comma '、')) (VP (VP (NP_dat (NP (NP (NP (NP (NP (Det その) (CN (N 州))) (Adp_gen の)) (CN (N すべて))) (Adp_gen の)) (CN (N 村))) (Adp_dat に)) (V 伝え)) (V_Aux られ) (V_Aux まし) (V_Aux た)))) (Punct '。'))
+# weight = 5.000000000000005e-17
 1	この	_	DET	_	_	2	det	_	_
-2	ニュース	_	NOUN	_	_	0	root	_	_
-3	は	_	ADP	_	_	2	dep	_	_
-4	、	_	PUNCT	_	_	6	punct	_	_
+2	ニュース	_	NOUN	_	_	12	nsubj	_	_
+3	は	_	Adp	_	nom	2	case	_	_
+4	、	_	PUNCT	_	_	2	punct	_	_
 5	その	_	DET	_	_	6	det	_	_
-6	州	_	NOUN	_	_	2	dep	_	_
-7	の	_	ADP	_	_	8	case	_	_
-8	すべて	_	NOUN	_	_	6	nmod	_	_
-9	の	_	ADP	_	_	10	case	_	_
-10	村	_	NOUN	_	_	8	nmod	_	_
-11	に	_	ADP	_	_	2	dep	_	_
-12	伝え	_	VERB	_	_	2	dep	_	_
-13	られ	_	AUX	_	_	14	aux	_	_
-14	まし	_	AUX	_	_	2	dep	_	_
-15	た	_	AUX	_	_	2	dep	_	_
-16	。	_	PUNCT	_	_	15	punct	_	_
+6	州	_	NOUN	_	_	8	nmod	_	_
+7	の	_	Adp	_	gen	6	case	_	_
+8	すべて	_	NOUN	_	_	10	nmod	_	_
+9	の	_	Adp	_	gen	8	case	_	_
+10	村	_	NOUN	_	_	12	obl	_	_
+11	に	_	Adp	_	dat	10	case	_	_
+12	伝え	_	VERB	_	_	0	root	_	_
+13	られ	_	AUX	_	_	12	aux	_	_
+14	まし	_	AUX	_	_	12	aux	_	_
+15	た	_	AUX	_	_	12	aux	_	_
+16	。	_	PUNCT	_	_	12	punct	_	_
 
 
 
 # text = 私:<PRON> は:<ADP> これ:<PRON> ら:<NOUN> の:<ADP> 考え:<NOUN> を:<ADP> 頭:<NOUN> の:<ADP> 奥:<NOUN> に:<ADP> 抱え:<VERB> て:<SCONJ> い:<VERB> ます:<AUX> 。:<PUNCT>
-# analyses = 5
-# parsetree = (Chunks (Comp (NP (NP (Pron 私)) (NP_obl (Prep は) (NP (NP (NP_poss (Pron_poss これ)) (CN (N ら))) (NP_obl (Prep の) (NP (NP (CN (N 考え))) (NP_obl (Prep を) (NP (NP (CN (N 頭))) (NP_obl (Prep の) (NP (CN (N 奥)))))))))))) (Prep に) (Imp (VP (V 抱え))) (S_sub (Subj て) (VP (V い))) (Utt (Utt (Imp (VP (aux ます)))) (Punct '。')))
-# weight = 1.953125000000002e-27
-1	私	_	PRON	_	_	0	root	_	_
-2	は	_	ADP	_	_	4	case	_	_
-3	これ	_	PRON	_	_	4	nmod:poss	_	_
-4	ら	_	NOUN	_	_	1	nmod	_	_
-5	の	_	ADP	_	_	6	case	_	_
-6	考え	_	NOUN	_	_	4	nmod	_	_
-7	を	_	ADP	_	_	8	case	_	_
-8	頭	_	NOUN	_	_	6	nmod	_	_
-9	の	_	ADP	_	_	10	case	_	_
-10	奥	_	NOUN	_	_	8	nmod	_	_
-11	に	_	ADP	_	_	1	dep	_	_
-12	抱え	_	VERB	_	_	1	dep	_	_
-13	て	_	SCONJ	_	_	14	mark	_	_
-14	い	_	VERB	_	_	1	dep	_	_
-15	ます	_	AUX	_	_	1	dep	_	_
-16	。	_	PUNCT	_	_	15	punct	_	_
+# analyses = 15
+# parsetree = (Utt (Utt (S (NP_nom (NP (Pron 私)) (Adp_nom は)) (VP (VP (VP (NP_acc (NP (NP (NP (Pron これ) (CN (N ら))) (Adp_gen の)) (CN (N 考え))) (Adp_acc を)) (NP_dat (NP (NP (CN (N 頭)) (Adp_gen の)) (CN (N 奥))) (Adp_dat に)) (V2 抱え)) (Sconj て) (Predet い)) (V_Aux ます)))) (Punct '。'))
+# weight = 1.2500000000000014e-17
+1	私	_	PRON	_	_	12	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	これ	_	PRON	_	_	4	nmod	_	_
+4	ら	_	NOUN	_	_	6	nmod	_	_
+5	の	_	Adp	_	gen	4	case	_	_
+6	考え	_	NOUN	_	_	12	obj	_	_
+7	を	_	Adp	_	acc	6	case	_	_
+8	頭	_	NOUN	_	_	10	nmod	_	_
+9	の	_	Adp	_	gen	8	case	_	_
+10	奥	_	NOUN	_	_	12	obl	_	_
+11	に	_	Adp	_	dat	10	case	_	_
+12	抱え	_	VERB	_	_	0	root	_	_
+13	て	_	SCONJ	_	_	12	mark	_	_
+14	い	_	VERB	_	_	12	fixed	_	_
+15	ます	_	AUX	_	_	12	aux	_	_
+16	。	_	PUNCT	_	_	12	punct	_	_
 
 
 
 # text = アダム:<PROPN> は:<ADP> 永遠:<NOUN> の:<ADP> 命:<NOUN> に:<ADP> 連れ:<VERB> て:<SCONJ> 行か:<VERB> れ:<AUX> た:<AUX> でしょう:<AUX> 。:<PUNCT>
-# analyses = 6
-# parsetree = (Chunks (Comp (NP (NP (PN アダム)) (NP_obl (Prep は) (NP (NP (CN (N 永遠))) (NP_obl (Prep の) (NP (CN (N 命)))))))) (Prep に) (Imp (VP (V 連れ))) (S_sub (Subj て) (VP (V 行か))) (Imp (do れ) (VP (aux た))) (Utt (Utt (Imp (VP (aux でしょう)))) (Punct '。')))
-# weight = 6.250000000000005e-26
-1	アダム	_	PROPN	_	_	0	root	_	_
-2	は	_	ADP	_	_	3	case	_	_
-3	永遠	_	NOUN	_	_	1	nmod	_	_
-4	の	_	ADP	_	_	5	case	_	_
-5	命	_	NOUN	_	_	3	nmod	_	_
-6	に	_	ADP	_	_	1	dep	_	_
-7	連れ	_	VERB	_	_	1	dep	_	_
-8	て	_	SCONJ	_	_	9	mark	_	_
-9	行か	_	VERB	_	_	1	dep	_	_
-10	れ	_	AUX	_	_	11	aux	_	_
-11	た	_	AUX	_	_	1	dep	_	_
-12	でしょう	_	AUX	_	_	1	dep	_	_
-13	。	_	PUNCT	_	_	12	punct	_	_
+# analyses = 115
+# parsetree = (Utt (Utt (S (NP_nom (NP (PN アダム)) (Adp_nom は)) (VP (VP (VP (NP_dat (NP (NP (CN (N 永遠)) (Adp_gen の)) (CN (N 命))) (Adp_dat に)) (V 連れ)) (Sconj て) (Predet 行か)) (V_Aux れ) (V_Aux た) (V_Aux でしょう)))) (Punct '。'))
+# weight = 1.0000000000000008e-13
+1	アダム	_	PROPN	_	_	7	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	永遠	_	NOUN	_	_	5	nmod	_	_
+4	の	_	Adp	_	gen	3	case	_	_
+5	命	_	NOUN	_	_	7	obl	_	_
+6	に	_	Adp	_	dat	5	case	_	_
+7	連れ	_	VERB	_	_	0	root	_	_
+8	て	_	SCONJ	_	_	7	mark	_	_
+9	行か	_	VERB	_	_	7	fixed	_	_
+10	れ	_	AUX	_	_	7	aux	_	_
+11	た	_	AUX	_	_	7	aux	_	_
+12	でしょう	_	AUX	_	_	7	aux	_	_
+13	。	_	PUNCT	_	_	7	punct	_	_
 
 
 
 # text = 筒:<NOUN> は:<ADP> 腐っ:<ADJ> て:<SCONJ> い:<VERB> て:<SCONJ> 、:<PUNCT> 取りかえ:<VERB> れば:<AUX> なら:<VERB> なかっ:<AUX> た:<AUX> 。:<PUNCT>
-# analyses = 8
-# parsetree = (Chunks (CN (N 筒)) (Prep は) (A 腐っ) (S_sub (Subj て) (VP (V い))) (Subj て) (VP_comma (comma '、') (VP (V 取りかえ))) (Imp (do れば) (VP (V なら))) (Utt (Utt (Imp (do なかっ) (VP (aux た)))) (Punct '。')))
-# weight = 1.6000000000000017e-20
-1	筒	_	NOUN	_	_	0	root	_	_
-2	は	_	ADP	_	_	1	dep	_	_
-3	腐っ	_	ADJ	_	_	1	dep	_	_
-4	て	_	SCONJ	_	_	5	mark	_	_
-5	い	_	VERB	_	_	1	dep	_	_
-6	て	_	SCONJ	_	_	1	dep	_	_
-7	、	_	PUNCT	_	_	8	punct	_	_
-8	取りかえ	_	VERB	_	_	1	dep	_	_
-9	れば	_	AUX	_	_	10	aux	_	_
-10	なら	_	VERB	_	_	1	dep	_	_
-11	なかっ	_	AUX	_	_	12	aux	_	_
-12	た	_	AUX	_	_	1	dep	_	_
-13	。	_	PUNCT	_	_	12	punct	_	_
+# analyses = 3
+# parsetree = (Utt (Utt (S (S (NP_nom (CN (N 筒)) (Adp_nom は)) (Comma_AP (AP (AP (A 腐っ)) (Sconj て) (V い) (Sconj て)) (comma '、')) (VP (VP (V 取りかえ)) (V_Aux れば) (Predet なら) (V_Aux なかっ))) (V_Aux た))) (Punct '。'))
+# weight = 4.000000000000004e-13
+1	筒	_	NOUN	_	_	8	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	腐っ	_	ADJ	_	_	8	advcl	_	_
+4	て	_	SCONJ	_	_	3	mark	_	_
+5	い	_	VERB	_	_	3	fixed	_	_
+6	て	_	SCONJ	_	_	3	mark	_	_
+7	、	_	PUNCT	_	_	3	punct	_	_
+8	取りかえ	_	VERB	_	_	0	root	_	_
+9	れば	_	AUX	_	_	8	aux	_	_
+10	なら	_	VERB	_	_	8	fixed	_	_
+11	なかっ	_	AUX	_	_	8	aux	_	_
+12	た	_	AUX	_	_	8	aux	_	_
+13	。	_	PUNCT	_	_	8	punct	_	_
 
 
 
-# text = 彼女:<PRON> は:<ADP> 、:<PUNCT> この:<DET> 少女:<NOUN> が:<ADP> クラス:<NOUN> の:<ADP> 前:<NOUN> で:<ADP> 彼女:<PRON> を:<ADP> 馬鹿:<NOUN> に:<ADP> する:<VERB> 勇気:<NOUN> を:<ADP> 持っ:<VERB> て:<SCONJ> いる:<VERB> こと:<NOUN> に:<ADP> 憤慨:<VERB> し:<AUX> まし:<AUX> た:<AUX> 。:<PUNCT>
-# analyses = 11
-# parsetree = (Chunks (Comp (NP (Pron 彼女))) (Prep は) (NP_appos (Punct_appos '、') (NP (NP (Det この) (CN (N 少女))) (NP_obl (Prep が) (NP (NP (CN (N クラス))) (NP_obl (Prep の) (NP (NP (CN (N 前))) (NP_obl (Prep で) (NP (NP (Pron 彼女)) (NP_obl (Prep を) (NP (CN (N 馬鹿)))))))))))) (Prep に) (VPSlash (VP (V2 する) (NP (CN (N 勇気)))) (Prep を)) (Imp (VP (V 持っ))) (S_sub (Subj て) (VP (V2 いる) (NP (CN (N こと))))) (Prep に) (Imp (VP (V 憤慨))) (Imp (do し) (VP (aux まし))) (Utt (Utt (Imp (VP (aux た)))) (Punct '。')))
-# weight = 7.812500000000016e-44
-1	彼女	_	PRON	_	_	0	root	_	_
-2	は	_	ADP	_	_	1	dep	_	_
-3	、	_	PUNCT	_	_	5	punct	_	_
+# text = 彼女:<PRON> は:<ADP> 、:<PUNCT> この:<DET> 少女:<NOUN> が:<ADP> クラス:<NOUN> の:<ADP> 前:<NOUN> で:<ADP> 彼女:<PRON> を:<ADP> 馬鹿:<NOUN> に:<ADP> する:<VERB> 勇気:<NOUN> を:<ADP> 持っ:<VERB> て:<SCONJ> いる:<VERB> こと:<NOUN> に:<ADP> 憤慨:<VERB> し:<AUX> まし:<AUX> た:<AUX> .:<PUNCT>
+# analyses = 1
+# parsetree = (Chunks (VP_comma (VP (VP (NP_dat (NP (S (NP_nom (NP (Pron 彼女)) (Adp_nom は) (comma '、')) (VP (VP (NP_acc (NP (S (NP_nom (NP (Det この) (CN (N 少女))) (Adp_nom が)) (VP (NP_loc (NP (NP (CN (N クラス)) (Adp_gen の)) (CN (N 前))) (Adp_loc で)) (VP (NP_acc (NP (Pron 彼女)) (Adp_acc を)) (NP_dat (CN (N 馬鹿)) (Adp_dat に)) (V2 する)))) (CN (N 勇気))) (Adp_acc を)) (V2 持っ)) (Sconj て) (Predet いる))) (CN (N こと))) (Adp_dat に)) (V 憤慨)) (V_Aux し) (V_Aux まし) (V_Aux た)) (comma '.')))
+# weight = 2.5000000000000057e-32
+1	彼女	_	PRON	_	_	18	nsubj	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	、	_	PUNCT	_	_	1	punct	_	_
 4	この	_	DET	_	_	5	det	_	_
-5	少女	_	NOUN	_	_	1	dep	_	_
-6	が	_	ADP	_	_	7	case	_	_
-7	クラス	_	NOUN	_	_	5	nmod	_	_
-8	の	_	ADP	_	_	9	case	_	_
-9	前	_	NOUN	_	_	7	nmod	_	_
-10	で	_	ADP	_	_	11	case	_	_
-11	彼女	_	PRON	_	_	9	nmod	_	_
-12	を	_	ADP	_	_	13	case	_	_
-13	馬鹿	_	NOUN	_	_	11	nmod	_	_
-14	に	_	ADP	_	_	1	dep	_	_
-15	する	_	VERB	_	_	1	dep	_	_
-16	勇気	_	NOUN	_	_	15	obj	_	_
-17	を	_	ADP	_	_	15	case	_	_
-18	持っ	_	VERB	_	_	1	dep	_	_
-19	て	_	SCONJ	_	_	20	mark	_	_
-20	いる	_	VERB	_	_	1	dep	_	_
-21	こと	_	NOUN	_	_	20	obj	_	_
-22	に	_	ADP	_	_	1	dep	_	_
-23	憤慨	_	VERB	_	_	1	dep	_	_
-24	し	_	AUX	_	_	25	aux	_	_
-25	まし	_	AUX	_	_	1	dep	_	_
-26	た	_	AUX	_	_	1	dep	_	_
-27	。	_	PUNCT	_	_	26	punct	_	_
+5	少女	_	NOUN	_	_	15	nsubj	_	_
+6	が	_	Adp	_	nom	5	case	_	_
+7	クラス	_	NOUN	_	_	9	nmod	_	_
+8	の	_	Adp	_	gen	7	case	_	_
+9	前	_	NOUN	_	_	15	advmod	_	_
+10	で	_	Adp	_	loc	9	case	_	_
+11	彼女	_	PRON	_	_	15	obj	_	_
+12	を	_	Adp	_	acc	11	case	_	_
+13	馬鹿	_	NOUN	_	_	15	obl	_	_
+14	に	_	Adp	_	dat	13	case	_	_
+15	する	_	VERB	_	_	16	acl	_	_
+16	勇気	_	NOUN	_	_	18	obj	_	_
+17	を	_	Adp	_	acc	16	case	_	_
+18	持っ	_	VERB	_	_	21	acl	_	_
+19	て	_	SCONJ	_	_	18	mark	_	_
+20	いる	_	VERB	_	_	18	fixed	_	_
+21	こと	_	NOUN	_	_	23	obl	_	_
+22	に	_	Adp	_	dat	21	case	_	_
+23	憤慨	_	VERB	_	_	0	root	_	_
+24	し	_	AUX	_	_	23	aux	_	_
+25	まし	_	AUX	_	_	23	aux	_	_
+26	た	_	AUX	_	_	23	aux	_	_
+27	.	_	PUNCT	_	_	23	punct	_	_
 
 
 
 # text = 彼:<PRON> が:<ADP> 選挙:<NOUN> 人:<NOUN> 投票:<NOUN> で:<ADP> の:<ADP> 圧勝:<NOUN> は:<ADP> 、:<PUNCT> わずか:<ADV> 43:<NUM> ％:<NOUN> の:<ADP> 人気:<NOUN> 投票:<NOUN> に:<ADP> 基づく:<VERB> 勝利:<NOUN> の:<ADP> 狭さ:<NOUN> を:<ADP> 隠し:<VERB> て:<SCONJ> いた:<AUX> 。:<PUNCT>
-# analyses = 9
-# parsetree = (Chunks (Comp (NP (NP (Pron 彼)) (NP_obl (Prep が) (NP (CN (N (N_one 選挙) (N (N_one 人) (N 投票)))))))) (Prep で) (Comp (NP_obl (Prep の) (NP (CN (N 圧勝))))) (Prep は) (NP_appos (Punct_appos '、') (NP (NP (Predet わずか) (NP (Num (Card '43')) (NP (CN (N '％'))))) (NP_obl (Prep の) (NP (CN (N (N_one 人気) (N 投票))))))) (Prep に) (VPSlash (VP (V2 基づく) (NP (NP (CN (N 勝利))) (NP_obl (Prep の) (NP (CN (N 狭さ)))))) (Prep を)) (Imp (VP (V 隠し))) (S_subcomma (Subj て) (VP (aux いた)) (comma '。')))
-# weight = 1.5625000000000034e-39
-1	彼	_	PRON	_	_	0	root	_	_
-2	が	_	ADP	_	_	5	case	_	_
-3	選挙	_	NOUN	_	_	5	compound	_	_
-4	人	_	NOUN	_	_	5	compound	_	_
-5	投票	_	NOUN	_	_	1	nmod	_	_
-6	で	_	ADP	_	_	1	dep	_	_
-7	の	_	ADP	_	_	8	case	_	_
-8	圧勝	_	NOUN	_	_	1	dep	_	_
-9	は	_	ADP	_	_	1	dep	_	_
-10	、	_	PUNCT	_	_	13	punct	_	_
-11	わずか	_	ADV	_	_	13	det:predet	_	_
-12	43	_	NUM	_	_	13	nummod	_	_
-13	％	_	NOUN	_	_	1	dep	_	_
-14	の	_	ADP	_	_	16	case	_	_
-15	人気	_	NOUN	_	_	16	compound	_	_
-16	投票	_	NOUN	_	_	13	nmod	_	_
-17	に	_	ADP	_	_	1	dep	_	_
-18	基づく	_	VERB	_	_	1	dep	_	_
-19	勝利	_	NOUN	_	_	18	obj	_	_
-20	の	_	ADP	_	_	21	case	_	_
-21	狭さ	_	NOUN	_	_	19	nmod	_	_
-22	を	_	ADP	_	_	18	case	_	_
-23	隠し	_	VERB	_	_	1	dep	_	_
-24	て	_	SCONJ	_	_	25	mark	_	_
-25	いた	_	AUX	_	_	1	dep	_	_
-26	。	_	PUNCT	_	_	25	punct	_	_
+# analyses = 3
+# parsetree = (Chunks (Sub_S (S (NP_nom (NP (Pron 彼)) (Adp_nom が)) (VP (NP_acc (NP (NP (NP (S (NP_nom (NP (NP (NP_loc (NP (NP (N 選挙) (CN (N 人))) (CN (N 投票))) (Adp_loc で)) (Adp_gen の)) (CN (N 圧勝))) (Adp_nom は) (comma '、')) (VP (NP_dat (NP (NP (NP (NP (NP (Adv わずか) (NP (Num '43'))) (CN (N '％'))) (Adp_gen の)) (CN (N 人気))) (CN (N 投票))) (Adp_dat に)) (V 基づく))) (CN (N 勝利))) (Adp_gen の)) (CN (N 狭さ))) (Adp_acc を)) (V2 隠し))) (Sconj て)) (V_Aux いた) (Punct '。'))
+# weight = 3.125000000000005e-33
+1	彼	_	PRON	_	_	23	nsubj	_	_
+2	が	_	Adp	_	nom	1	case	_	_
+3	選挙	_	NOUN	_	_	4	compound	_	_
+4	人	_	NOUN	_	_	5	nmod	_	_
+5	投票	_	NOUN	_	_	8	nmod	_	_
+6	で	_	Adp	_	loc	5	case	_	_
+7	の	_	Adp	_	gen	5	case	_	_
+8	圧勝	_	NOUN	_	_	18	nsubj	_	_
+9	は	_	Adp	_	nom	8	case	_	_
+10	、	_	PUNCT	_	_	8	punct	_	_
+11	わずか	_	Adv	_	_	12	advmod	_	_
+12	43	_	NUM	_	_	13	nmod	_	_
+13	％	_	NOUN	_	_	15	nmod	_	_
+14	の	_	Adp	_	gen	13	case	_	_
+15	人気	_	NOUN	_	_	16	nmod	_	_
+16	投票	_	NOUN	_	_	18	obl	_	_
+17	に	_	Adp	_	dat	16	case	_	_
+18	基づく	_	VERB	_	_	19	acl	_	_
+19	勝利	_	NOUN	_	_	21	nmod	_	_
+20	の	_	Adp	_	gen	19	case	_	_
+21	狭さ	_	NOUN	_	_	23	obj	_	_
+22	を	_	Adp	_	acc	21	case	_	_
+23	隠し	_	VERB	_	_	0	root	_	_
+24	て	_	SCONJ	_	_	23	mark	_	_
+25	いた	_	AUX	_	_	23	dep	_	_
+26	。	_	PUNCT	_	_	23	dep	_	_
 
 
 
-# text = アメリカ:<PROPN> 軍:<NOUN> は:<ADP> 現在:<NOUN> 、:<PUNCT> 有機:<NOUN> リン:<NOUN> 系:<NOUN> 神経剤:<NOUN> 中毒:<NOUN> の:<ADP> 場合:<NOUN> に:<ADP> 使用:<VERB> する:<AUX> アトロピン:<NOUN> と:<ADP> 自動:<NOUN> 注射:<NOUN> 器:<NOUN> を:<ADP> 救急:<NOUN> キット:<NOUN> に:<ADP> 持っ:<VERB> て:<SCONJ> い:<VERB> ます:<AUX> 。:<PUNCT>
-# analyses = 8
-# parsetree = (Chunks (Comp (NP (NP (CN (N (PN アメリカ) (CN (N 軍))))) (NP_obl (Prep は) (NP (NP (NP (CN (N 現在))) (NP_appos (Punct_appos '、') (NP (CN (N (N_one 有機) (N (N_one リン) (N (N_one 系) (N (N_one 神経剤) (N 中毒))))))))) (NP_obl (Prep の) (NP (CN (N 場合)))))))) (Prep に) (Imp (VP (V 使用))) (Imp (cop する) (Comp (NP (NP (CN (N アトロピン))) (NP_obl (Prep と) (NP (NP (CN (N (N_one 自動) (N (N_one 注射) (N 器))))) (NP_obl (Prep を) (NP (CN (N (N_one 救急) (N キット)))))))))) (Prep に) (Imp (VP (V 持っ))) (S_sub (Subj て) (VP (V い))) (Utt (Utt (Imp (VP (aux ます)))) (Punct '。')))
-# weight = 6.103515625000012e-44
-1	アメリカ	_	PROPN	_	_	2	compound	_
+# text = アメリカ:<PROPN> 軍:<NOUN> は:<ADP> 現在:<ADV> 、:<PUNCT> 有機:<NOUN> リン:<NOUN> 系:<NOUN> 神経剤:<NOUN> 中毒:<NOUN> の:<ADP> 場合:<NOUN> に:<ADP> 使用:<VERB> する:<AUX> アトロピン:<NOUN> と:<ADP> 自動:<NOUN> 注射:<NOUN> 器:<NOUN> を:<ADP> 救急:<NOUN> キット:<NOUN> に:<ADP> 持っ:<VERB> て:<SCONJ> い:<VERB> ます:<AUX> .:<PUNCT>
+# analyses = 3
+# parsetree = (Chunks (NP_nom (NP (PN アメリカ) (CN (N 軍))) (Adp_nom は)) (Utt (Utt (IAdv 現在)) (Punct '、')) (VP_comma (VP (VP (VP (NP_acc (NP (NP (NP (NP (VP (NP_dat (NP (NP (NP (NP (NP (NP (N 有機) (CN (N リン))) (CN (N 系))) (CN (N 神経剤))) (CN (N 中毒))) (Adp_gen の)) (CN (N 場合))) (Adp_dat に)) (V 使用)) (NP (VP (V する)) (NP (CN (N アトロピン)) (Adp と)))) (CN (N 自動))) (CN (N 注射))) (CN (N 器))) (Adp_acc を)) (NP_dat (NP (N 救急) (CN (N キット))) (Adp_dat に)) (V2 持っ)) (Sconj て) (Predet い)) (V_Aux ます)) (comma '.')))
+# weight = 3.906250000000008e-36
+1	アメリカ	_	PROPN	_	_	2	compound	_	_
 2	軍	_	NOUN	_	_	0	root	_	_
-3	は	_	ADP	_	_	4	case	_	_
-4	現在	_	NOUN	_	_	2	nmod	_	_
-5	、	_	PUNCT	_	_	10	punct	_	_
-6	有機	_	NOUN	_	_	10	compound	_	_
-7	リン	_	NOUN	_	_	10	compound	_	_
-8	系	_	NOUN	_	_	10	compound	_	_
-9	神経剤	_	NOUN	_	_	10	compound	_	_
-10	中毒	_	NOUN	_	_	4	appos	_	_
-11	の	_	ADP	_	_	12	case	_	_
-12	場合	_	NOUN	_	_	4	nmod	_	_
-13	に	_	ADP	_	_	2	dep	_	_
-14	使用	_	VERB	_	_	2	dep	_	_
-15	する	_	AUX	_	_	16	cop	_	_
-16	アトロピン	_	NOUN	_	_	2	dep	_	_
-17	と	_	ADP	_	_	20	case	_	_
-18	自動	_	NOUN	_	_	20	compound	_	_
-19	注射	_	NOUN	_	_	20	compound	_	_
-20	器	_	NOUN	_	_	16	nmod	_	_
-21	を	_	ADP	_	_	23	case	_	_
+3	は	_	Adp	_	nom	2	case	_	_
+4	現在	_	ADV	_	_	2	dep	_	_
+5	、	_	PUNCT	_	_	4	punct	_	_
+6	有機	_	NOUN	_	_	7	compound	_	_
+7	リン	_	NOUN	_	_	8	nmod	_	_
+8	系	_	NOUN	_	_	9	nmod	_	_
+9	神経剤	_	NOUN	_	_	10	nmod	_	_
+10	中毒	_	NOUN	_	_	12	nmod	_	_
+11	の	_	Adp	_	gen	10	case	_	_
+12	場合	_	NOUN	_	_	14	obl	_	_
+13	に	_	Adp	_	dat	12	case	_	_
+14	使用	_	VERB	_	_	16	acl	_	_
+15	する	_	VERB	_	_	16	acl	_	_
+16	アトロピン	_	NOUN	_	_	18	nmod	_	_
+17	と	_	Adp	_	_	16	case	_	_
+18	自動	_	NOUN	_	_	19	nmod	_	_
+19	注射	_	NOUN	_	_	20	nmod	_	_
+20	器	_	NOUN	_	_	25	obj	_	_
+21	を	_	Adp	_	acc	20	case	_	_
 22	救急	_	NOUN	_	_	23	compound	_	_
-23	キット	_	NOUN	_	_	20	nmod	_	_
-24	に	_	ADP	_	_	2	dep	_	_
+23	キット	_	NOUN	_	_	25	obl	_	_
+24	に	_	Adp	_	dat	23	case	_	_
 25	持っ	_	VERB	_	_	2	dep	_	_
-26	て	_	SCONJ	_	_	27	mark	_	_
-27	い	_	VERB	_	_	2	dep	_	_
-28	ます	_	AUX	_	_	2	dep	_	_
-29	。	_	PUNCT	_	_	28	punct	_	_
+26	て	_	SCONJ	_	_	25	mark	_	_
+27	い	_	VERB	_	_	25	fixed	_	_
+28	ます	_	AUX	_	_	25	aux	_	_
+29	.	_	PUNCT	_	_	25	punct	_	_
 
 
 
-# text = 彼:<PRON> は:<ADP> 長期:<NOUN> 的:<PART> に:<ADP> は:<ADP> 、:<PUNCT> 力:<NOUN> と:<ADP> 暴力:<NOUN> で:<ADP> は:<ADP> でき:<VERB> ない:<AUX> こと:<NOUN> を:<ADP> 策略:<NOUN> で:<ADP> 成し遂げる:<VERB> か:<ADP> も:<ADP> しれ:<VERB> ません:<AUX> 。:<PUNCT>
-# analyses = 13
-# parsetree = (Chunks (NP_poss (NP (NP (Pron 彼)) (NP_obl (Prep は) (NP (CN (N 長期))))) ('s' 的)) (Prep に) (Prep は) (NP_appos (Punct_appos '、') (NP (NP (CN (N 力))) (NP_obl (Prep と) (NP (CN (N 暴力)))))) (Prep で) (Prep は) (Imp (VP (V でき))) (Imp (cop ない) (Comp (NP (NP (CN (N こと))) (NP_obl (Prep を) (NP (CN (N 策略))))))) (Prep で) (VPSlash (VP (V 成し遂げる)) (Prep か)) (Prep も) (Imp (VP (V しれ))) (Utt (Utt (Imp (VP (aux ません)))) (Punct '。')))
-# weight = 3.125000000000005e-36
+# text = 彼:<PRON> は:<ADP> 長期:<NOUN> 的:<PART> に:<ADP> は:<ADP> 、:<PUNCT> 力:<NOUN> と:<ADP> 暴力:<NOUN> で:<ADP> は:<ADP> でき:<VERB> ない:<AUX> こと:<NOUN> を:<ADP> 策略:<NOUN> で:<ADP> 成し遂げる:<VERB> か:<ADP> も:<ADP> しれ:<VERB> ません:<AUX> .:<PUNCT>
+# analyses = 12
+# parsetree = (Chunks (NP_nom (NP (Pron 彼)) (Adp_nom は)) (NP_dat (NP (CN (N 長期)) (Part 的)) (Adp_dat に)) (Adp_nom は) (Punct '、') (NP_loc (NP (NP (CN (N 力)) (Adp と)) (CN (N 暴力))) (Adp_loc で)) (Adp_nom は) (VP (VP (V でき)) (V_Aux ない)) (NP_acc (CN (N こと)) (Adp_acc を)) (VP (NP_loc (CN (N 策略)) (Adp_loc で)) (VP (V 成し遂げる))) (Part か) (Conj も) (VP_comma (VP (VP (V しれ)) (V_Aux ません)) (comma '.')))
+# weight = 8.000000000000016e-28
 1	彼	_	PRON	_	_	0	root	_	_
-2	は	_	ADP	_	_	3	case	_	_
-3	長期	_	NOUN	_	_	1	nmod	_	_
-4	的	_	PART	_	_	1	case	_	_
-5	に	_	ADP	_	_	1	dep	_	_
-6	は	_	ADP	_	_	1	dep	_	_
-7	、	_	PUNCT	_	_	8	punct	_	_
-8	力	_	NOUN	_	_	1	dep	_	_
-9	と	_	ADP	_	_	10	case	_	_
-10	暴力	_	NOUN	_	_	8	nmod	_	_
-11	で	_	ADP	_	_	1	dep	_	_
-12	は	_	ADP	_	_	1	dep	_	_
+2	は	_	Adp	_	nom	1	case	_	_
+3	長期	_	NOUN	_	_	1	dep	_	_
+4	的	_	PART	_	_	3	mark	_	_
+5	に	_	Adp	_	dat	3	case	_	_
+6	は	_	Adp	_	nom	1	dep	_	_
+7	、	_	PUNCT	_	_	1	dep	_	_
+8	力	_	NOUN	_	_	10	nmod	_	_
+9	と	_	Adp	_	_	8	case	_	_
+10	暴力	_	NOUN	_	_	1	dep	_	_
+11	で	_	Adp	_	loc	10	case	_	_
+12	は	_	Adp	_	nom	1	dep	_	_
 13	でき	_	VERB	_	_	1	dep	_	_
-14	ない	_	AUX	_	_	15	cop	_	_
+14	ない	_	AUX	_	_	13	aux	_	_
 15	こと	_	NOUN	_	_	1	dep	_	_
-16	を	_	ADP	_	_	17	case	_	_
-17	策略	_	NOUN	_	_	15	nmod	_	_
-18	で	_	ADP	_	_	1	dep	_	_
+16	を	_	Adp	_	acc	15	case	_	_
+17	策略	_	NOUN	_	_	19	advmod	_	_
+18	で	_	Adp	_	loc	17	case	_	_
 19	成し遂げる	_	VERB	_	_	1	dep	_	_
-20	か	_	ADP	_	_	19	case	_	_
-21	も	_	ADP	_	_	1	dep	_	_
+20	か	_	PART	_	_	1	dep	_	_
+21	も	_	CCONJ	_	_	1	dep	_	_
 22	しれ	_	VERB	_	_	1	dep	_	_
-23	ません	_	AUX	_	_	1	dep	_	_
-24	。	_	PUNCT	_	_	23	punct	_	_
+23	ません	_	AUX	_	_	22	aux	_	_
+24	.	_	PUNCT	_	_	22	punct	_	_
 
 
 
-# text = 上流:<NOUN> 階級:<NOUN> が:<ADP> 存在:<VERB> する:<AUX> 階層:<NOUN> 的:<PART> な:<AUX> 社会:<NOUN> のみ:<ADP> が:<ADP> 芸術:<NOUN> 作品:<NOUN> を:<ADP> 生み出す:<VERB> こと:<NOUN> が:<ADP> できる:<VERB> と:<ADP> 言わ:<VERB> れ:<AUX> て:<SCONJ> い:<VERB> ます:<AUX> 。:<PUNCT>
-# analyses = 13
-# parsetree = (Chunks (CN (N (N_one 上流) (N 階級))) (Prep が) (Imp (VP (V 存在))) (Imp (cop する) (Comp (NP (NP (CN (N 階層))) (SC (VP_to (to 的) (cop な) (Comp (NP (CN (N 社会))))))))) (Prep のみ) (Comp (NP_obl (Prep が) (NP (CN (N (N_one 芸術) (N 作品)))))) (Prep を) (VPSlash (VP (V2 生み出す) (NP (CN (N こと)))) (Prep が)) (VPSlash (VP (V できる)) (Prep と)) (Imp (VP (V 言わ))) (Imp (VP (aux れ))) (S_sub (Subj て) (VP (V い))) (Utt (Utt (Imp (VP (aux ます)))) (Punct '。')))
-# weight = 3.125000000000006e-44
+# text = 上流:<NOUN> 階級:<NOUN> が:<ADP> 存在:<VERB> する:<AUX> 階層:<NOUN> 的:<PART> な:<AUX> 社会:<NOUN> のみ:<ADP> が:<ADP> 芸術:<NOUN> 作品:<NOUN> を:<ADP> 生み出す:<VERB> こと:<NOUN> が:<ADP> できる:<VERB> と:<ADP> 言わ:<VERB> れ:<AUX> て:<SCONJ> い:<VERB> ます:<AUX> .:<PUNCT>
+# analyses = 5
+# parsetree = (Chunks (NP_rel (S (S (NP_nom (NP (N 上流) (CN (N 階級))) (Adp_nom が)) (VP (V 存在))) (NP (VP (V する)) (NP (CN (N 階層)) (Part 的))) (V_Aux な)) (NP (S (NP_nom (NP (CN (N 社会)) (Adp のみ)) (Adp_nom が)) (VP (NP_acc (NP (N 芸術) (CN (N 作品))) (Adp_acc を)) (V2 生み出す))) (CN (N こと)))) (Adp_nom が) (Predet できる) (Adp と) (VP_comma (VP (VP (VP (VP (V 言わ)) (V_Aux れ)) (Sconj て) (Predet い)) (V_Aux ます)) (comma '.')))
+# weight = 5.0000000000000095e-30
 1	上流	_	NOUN	_	_	2	compound	_	_
-2	階級	_	NOUN	_	_	0	root	_	_
-3	が	_	ADP	_	_	2	dep	_	_
-4	存在	_	VERB	_	_	2	dep	_	_
-5	する	_	AUX	_	_	6	cop	_	_
-6	階層	_	NOUN	_	_	2	dep	_	_
-7	的	_	PART	_	_	9	mark	_	_
-8	な	_	AUX	_	_	9	cop	_	_
-9	社会	_	NOUN	_	_	6	acl	_	_
-10	のみ	_	ADP	_	_	2	dep	_	_
-11	が	_	ADP	_	_	13	case	_	_
+2	階級	_	NOUN	_	_	4	nsubj	_	_
+3	が	_	Adp	_	nom	2	case	_	_
+4	存在	_	VERB	_	_	6	acl	_	_
+5	する	_	VERB	_	_	6	acl	_	_
+6	階層	_	NOUN	_	_	16	acl	_	_
+7	的	_	PART	_	_	6	mark	_	_
+8	な	_	AUX	_	_	6	aux	_	_
+9	社会	_	NOUN	_	_	15	nsubj	_	_
+10	のみ	_	Adp	_	_	9	case	_	_
+11	が	_	Adp	_	nom	9	case	_	_
 12	芸術	_	NOUN	_	_	13	compound	_	_
-13	作品	_	NOUN	_	_	2	dep	_	_
-14	を	_	ADP	_	_	2	dep	_	_
-15	生み出す	_	VERB	_	_	2	dep	_	_
-16	こと	_	NOUN	_	_	15	obj	_	_
-17	が	_	ADP	_	_	15	case	_	_
-18	できる	_	VERB	_	_	2	dep	_	_
-19	と	_	ADP	_	_	18	case	_	_
-20	言わ	_	VERB	_	_	2	dep	_	_
-21	れ	_	AUX	_	_	2	dep	_	_
-22	て	_	SCONJ	_	_	23	mark	_	_
-23	い	_	VERB	_	_	2	dep	_	_
-24	ます	_	AUX	_	_	2	dep	_	_
-25	。	_	PUNCT	_	_	24	punct	_	_
+13	作品	_	NOUN	_	_	15	obj	_	_
+14	を	_	Adp	_	acc	13	case	_	_
+15	生み出す	_	VERB	_	_	16	acl	_	_
+16	こと	_	NOUN	_	_	0	root	_	_
+17	が	_	Adp	_	nom	16	dep	_	_
+18	できる	_	VERB	_	_	16	dep	_	_
+19	と	_	Adp	_	_	16	dep	_	_
+20	言わ	_	VERB	_	_	16	dep	_	_
+21	れ	_	AUX	_	_	20	aux	_	_
+22	て	_	SCONJ	_	_	20	mark	_	_
+23	い	_	VERB	_	_	20	fixed	_	_
+24	ます	_	AUX	_	_	20	aux	_	_
+25	.	_	PUNCT	_	_	20	punct	_	_
 
 
 
 # text = 主教:<NOUN> が:<ADP> い:<VERB> なかっ:<AUX> たら:<AUX> 教会:<NOUN> を:<ADP> 燃やさ:<VERB> なかっ:<AUX> た:<AUX> と:<ADP> いう:<VERB> 彼:<PRON> の:<ADP> 純真な:<ADJ> 説明:<NOUN> 。:<PUNCT>
-# analyses = 9
-# parsetree = (Chunks (CN (N 主教)) (Prep が) (Imp (VP (V い))) (Imp (do なかっ) (cop たら) (Comp (NP (CN (N 教会))))) (Prep を) (Imp (VP (V 燃やさ))) (Imp (do なかっ) (VP (aux た))) (Prep と) (Utt (Utt (Imp (VP (V2 いう) (NP (NP (Pron 彼)) (NP_obl (Prep の) (NP (CN (AP (A 純真な)) (CN (N 説明))))))))) (Punct '。')))
-# weight = 6.250000000000006e-26
-1	主教	_	NOUN	_	_	0	root	_	_
-2	が	_	ADP	_	_	1	dep	_	_
-3	い	_	VERB	_	_	1	dep	_	_
-4	なかっ	_	AUX	_	_	6	aux	_	_
-5	たら	_	AUX	_	_	6	cop	_	_
-6	教会	_	NOUN	_	_	1	dep	_	_
-7	を	_	ADP	_	_	1	dep	_	_
-8	燃やさ	_	VERB	_	_	1	dep	_	_
-9	なかっ	_	AUX	_	_	10	aux	_	_
-10	た	_	AUX	_	_	1	dep	_	_
-11	と	_	ADP	_	_	1	dep	_	_
-12	いう	_	VERB	_	_	1	dep	_	_
-13	彼	_	PRON	_	_	12	obj	_	_
-14	の	_	ADP	_	_	16	case	_	_
+# analyses = 3
+# parsetree = (Chunks (VP (VP (NP_acc (NP (S (NP_nom (CN (N 主教)) (Adp_nom が)) (VP (VP (V い)) (V_Aux なかっ) (V_Aux たら))) (CN (N 教会))) (Adp_acc を)) (V2 燃やさ)) (V_Aux なかっ) (V_Aux た)) (Utt (Conj と) (Utt (NP (NP (VP (V いう)) (NP (Pron 彼))) (Adp_gen の)))) (Comma_NP (NP (AP (A 純真な)) (CN (N 説明))) (comma '。')))
+# weight = 1.2500000000000015e-22
+1	主教	_	NOUN	_	_	3	nsubj	_	_
+2	が	_	Adp	_	nom	1	case	_	_
+3	い	_	VERB	_	_	6	acl	_	_
+4	なかっ	_	AUX	_	_	3	aux	_	_
+5	たら	_	AUX	_	_	3	aux	_	_
+6	教会	_	NOUN	_	_	8	obj	_	_
+7	を	_	Adp	_	acc	6	case	_	_
+8	燃やさ	_	VERB	_	_	0	root	_	_
+9	なかっ	_	AUX	_	_	8	aux	_	_
+10	た	_	AUX	_	_	8	aux	_	_
+11	と	_	CCONJ	_	_	13	cc	_	_
+12	いう	_	VERB	_	_	13	acl	_	_
+13	彼	_	PRON	_	_	8	dep	_	_
+14	の	_	Adp	_	gen	13	case	_	_
 15	純真な	_	ADJ	_	_	16	amod	_	_
-16	説明	_	NOUN	_	_	13	nmod	_	_
-17	。	_	PUNCT	_	_	12	punct	_	_
+16	説明	_	NOUN	_	_	8	dep	_	_
+17	。	_	PUNCT	_	_	16	punct	_	_
+
+
 
