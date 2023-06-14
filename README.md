@@ -55,14 +55,13 @@ Some adjectives can flex like verbs.
 
 If the verb flexes, the copula is not necessary. If the speech is polite, the polite copula may be added after the flexed adjective. (the copula also flexes in past, but we are not going into much detail here)
 
-
+Example:
 - He is cold.
 - kare	wa	samu-i	(desu)
 - 彼		は	寒 い 	(です)
 - he		(topic)	cold-is	(polite copula)
 
-
-
+Example:
 - He was a boy.
 - kare	wa	shonen	datta
 - 彼		は	少年	だった
@@ -73,6 +72,7 @@ If the verb flexes, the copula is not necessary. If the speech is polite, the po
 
 (Subject) wa (Object) wo VERB.
 
+Example:
 - I 	was 	just 	a 	boy 	with/wearing 	muddy	shoes.
 - 僕 	は 	泥	 	だらけ 	の 	靴 	を 	履いた	少年	だけ	でした。
 - boku wa doro darake no kutsu wo haita shonen dake deshita.	
@@ -81,6 +81,7 @@ If the verb flexes, the copula is not necessary. If the speech is polite, the po
 Something like: I (shoes full of mud wearing)->boy only was).
 There's a relative clause there.
 
+Example:
 - I 	will 	go 	to 	Italy.
 - 私	は	イタリア	に	行く。
 - watashi wa itaria ni iku.
@@ -91,6 +92,7 @@ Adverbials as well, but also at the beginning.
 
 (Subject) wa (dative) ni (locative) de (Object) wo VERB.
 
+Example:
 - I 	will	 give	 her	 a	 rose	 at	 the	 concert.
 - 私	は	コンサート	で	彼女	に	薔薇	を	あげる。
 - watashi wa consaato de kanojo ni bara wo ageru.
