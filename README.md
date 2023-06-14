@@ -61,6 +61,8 @@ If the verb flexes, the copula is not necessary. If the speech is polite, the po
 - 彼		は	寒 い 	(です)
 - he		(topic)	cold-is	(polite copula)
 
+
+
 - He was a boy.
 - kare	wa	shonen	datta
 - 彼		は	少年	だった
