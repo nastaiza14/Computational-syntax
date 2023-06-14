@@ -6,6 +6,7 @@ NOTES
 I used universal dependencies as a reference to tag my sentences and make the rules, but didn't follow it completely.
 
 A) Japanese Grammar summary
+
 B) Problems encountered during assignment
 
 - - - - - -
