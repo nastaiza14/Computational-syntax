@@ -2,7 +2,7 @@
 1	彼	_	PRON	_	_	2	nmod	_	_
 2	ら	_	NOUN	_	_	4	nsubj	_	_
 3	は	_	ADP	_	_	2	case	_	_
-4	誰	_	PRON	_	_	0	root　	_	_
+4	誰	_	PRON	_	_	0	root	_	_
 5	です	_	AUX	_	_	4	cop	_	_
 5	か	_	PART	_	_	4	mark 	_	_
 7	?	_	PUNCT	_	_	4	punct 	_	_
@@ -134,7 +134,7 @@
 19	た	_	AUX	_	_	18	aux	_	_
 20	。	_	PUNCT	_	_	18	punct	_	_
 																		
-# text = 最初から有名人の名前がかなり珍しければ、それは最も明らかになる.								
+# text = 最初から有名人の名前がかなり珍しければ、それは最も明らかになる。								
 1	最初	_	ADJ	_	_	9	obl	_	_
 2	から	_	ADP	_	_	1	case	_	_
 3	有名	_	ADJ	_	_	4	compund	_	_
@@ -152,9 +152,9 @@
 15	明らか	_	ADJ	_	_	17	obl	_	_
 16	に	_	ADP	_	_	15	case	_	_
 17	なる	_	VERB	_	_	0	root	_	_
-18	.	_	PUNCT	_	_	17	punct	_	_
+18	。	_	PUNCT	_	_	17	punct	_	_
 																		
-# text = これは、投資家に資金をファンドにとどめさせることにはならない.									
+# text = これは、投資家に資金をファンドにとどめさせることにはならない。									
 1	これ	_	PRON	_	_	16	nsubj	_	_
 2	は	_	ADP	_	_	1	case	_	_
 3	、	_	PUNCT	_	_	1	punct	_	_
@@ -172,9 +172,9 @@
 15	は	_	ADP	_	_	13	case	_	_
 16	なら	_	VERB	_	_	0	root	_	_
 17	ない	_	AUX	_	_	16	aux	_	_
-18	.	_	PUNCT	_	_	16	punct	_	_
+18	。	_	PUNCT	_	_	16	punct	_	_
 																		
-# text = この経済データと政治的なレトリックとの間の不一致を熟知している、あるいはあるべきである.									
+# text = この経済データと政治的なレトリックとの間の不一致を熟知している、あるいはあるべきである。									
 1	この	_	DET	_	_	2	det	_	_
 2	経済	_	NOUN	_	_	3	compound	_	_
 3	データ	_	NOUN	_	_	5	nmod	_	_
@@ -200,7 +200,7 @@
 23	べき	_	AUX	_	_	22	aux	_	_
 24	で	_	AUX	_	_	22	aux	_	_
 25	ある	_	VERB	_	_	24	fixed	_	_
-26	.	_	PUNCT	_	_	22	punct	_	_
+26	。	_	PUNCT	_	_	22	punct	_	_
 																		
 # text = 実現可能性調査によると、ゴンドラでポトマック川を渡るのは約4分かかると推定されています。									
 1	実現	_	NOUN	_	_	3	compound	_	_
@@ -328,7 +328,7 @@
 12	た	_	AUX	_	_	8	aux	_	_
 13	。	_	PUNCT	_	_	7	punct	_	_
 																		
-# text = 彼女は、この少女がクラスの前で彼女を馬鹿にする勇気を持っていることに憤慨しました. 									
+# text = 彼女は、この少女がクラスの前で彼女を馬鹿にする勇気を持っていることに憤慨しました。 									
 1	彼女	_	PRON	_	_	23	nsubj	_	_
 2	は	_	ADP	_	_	1	case	_	_
 3	、	_	PUNCT	_	_	1	punct	_	_
@@ -355,7 +355,7 @@
 24	し	_	AUX	_	_	23	aux	_	_
 25	まし	_	AUX	_	_	23	aux	_	_
 26	た	_	AUX	_	_	23	aux	_	_
-27	.	_	PUNCT	_	_	23	punct	_	_
+27	。	_	PUNCT	_	_	23	punct	_	_
 																		
 # text = 彼が選挙人投票での圧勝は、わずか43％の人気投票に基づく勝利の狭さを隠していた。									
 1	彼	_	PRON	_	_	8	nsubj	_	_
@@ -385,7 +385,7 @@
 25	いた	_	AUX	_	_	23	aux	_	_
 26	。	_	PUNCT	_	_	23	punct	_	_
 																		
-# text = アメリカ軍は現在、有機リン系神経剤中毒の場合に使用するアトロピンと自動注射器を救急キットに持っています.									
+# text = アメリカ軍は現在、有機リン系神経剤中毒の場合に使用するアトロピンと自動注射器を救急キットに持っています。									
 1	アメリカ	_	PROPN	_	_	2	compound	_	_
 2	軍	_	NOUN	_	_	25	nsubj	_	_
 3	は	_	ADP	_	_	2	case	_	_
@@ -414,9 +414,9 @@
 26	て	_	SCONJ	_	_	25	mark	_	_
 27	い	_	VERB	_	_	25	fixed	_	_
 28	ます	_	AUX	_	_	25	aux	_	_
-29	.	_	PUNCT	_	_	25	punct	_	_
+29	。	_	PUNCT	_	_	25	punct	_	_
 																		
-# text = 彼は長期的には、力と暴力ではできないことを、策略で成し遂げるかもしれません.									
+# text = 彼は長期的には、力と暴力ではできないことを、策略で成し遂げるかもしれません。									
 1	彼	_	PRON	_	_	19	nsubj	_	_
 2	は	_	ADP	_	_	1	case	_	_
 3	長期	_	NOUN	_	_	19	advcl	_	_
@@ -440,9 +440,9 @@
 21	も	_	ADP	_	_	20	fixed	_	_
 22	しれ	_	VERB	_	_	19	fixed	_	_
 23	ません	_	AUX	_	_	19	aux	_	_
-24	.	_	PUNCT	_	_	19	punct	_	_
+24	。	_	PUNCT	_	_	19	punct	_	_
 																		
-# text = 上流階級が存在する階層的な社会のみが芸術作品を生み出すことができると言われています.									
+# text = 上流階級が存在する階層的な社会のみが芸術作品を生み出すことができると言われています。									
 1	上流	_	NOUN	_	_	2	compound	_	_
 2	階級	_	NOUN	_	_	4	nsubj	_	_
 3	が	_	ADP	_	_	2	case	_	_
@@ -467,7 +467,7 @@
 22	て	_	SCONJ	_	_	20	mark	_	_
 23	い	_	VERB	_	_	20	fixed	_	_
 24	ます	_	AUX	_	_	20	aux	_	_
-25	.	_	PUNCT	_	_	20	punct	_	_
+25	。	_	PUNCT	_	_	20	punct	_	_
 																		
 # text = 主教がいなかったら教会を燃やさなかったという彼の純真な説明。
 1	主教	_	NOUN	_	_	3	nsubj	_	_
@@ -480,7 +480,7 @@
 8	燃やさ	_	VERB	_	_	17	advcl	_	_
 9	なかっ	_	AUX	_	_	8	aux	_	_
 10	た	_	AUX	_	_	8	aux	_	_
-11	と	_	ADP	_	_	10	case	_	_
+11	と	_	ADP	_	_	8	case	_	_
 12	いう	_	VERB	_	_	17	fixed	_	_
 13	彼	_	PRON	_	_	17	nmod	_	_
 14	の	_	ADP	_	_	13	case	_	_
