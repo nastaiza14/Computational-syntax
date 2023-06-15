@@ -142,7 +142,7 @@ This may also affect other sentences.
 
 4) 
 
-If I add all the Adp objects (Adp_nom, Adp_acc, etc.) to the tag "ADP", the terminal takes a very long time to load the parsing. Even though this may affect the score, I decided to not put those categories in the ADP tag.
+If I add all the Adp objects (Adp_nom, Adp_acc, etc.) to the tag "ADP", the terminal takes a very long time to load the parsing (I don't know if it loads at all). Even though this may affect the score, I decided to not put those categories in the ADP tag to avoid this error.
 
 5) 
 
