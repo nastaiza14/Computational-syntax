@@ -5,6 +5,7 @@ Utt ::= NP_obl comma Utt # cc punct head
 Utt ::= parenth Utt parenth # punct head punct
 
 Utt ::= S
+Utt ::= Final_S
 Utt ::= QS
 Utt ::= Imp
 Utt ::= NP
@@ -14,6 +15,9 @@ Utt ::= IAdv
 Utt ::= Num
 
 -- sentences
+Final_S ::= S Predet? V_aux Predet? V_aux? V_aux? # head aux fixed aux aux
+-- ojito ojito:
+S ::= Final_S S # ccomp head
 -- plain
 S ::= NP_nom VP # nsubj head
 S ::= Comma_NP VP # advcl head
@@ -48,7 +52,7 @@ S ::= S comma VP # advcl punct head
 -- Cor_S ::= VP comma CConj Adp # head punct cc case (this is replaced by following S)
 -- this one replaces last two rules "あるい は" 
 -- Be careful because it is actually just a single particle: あるいは
-S ::= VP_comma CConj Adp VP # ccomp cc case head 
+S ::= VP_comma CConj Adp_nom VP # ccomp cc case head 
 -- parts of subordinate sentences 
 Sub_S ::= S Sconj # head mark
 Sub2_S ::= S Conj # head case
@@ -62,6 +66,9 @@ Comma_AP ::= AP comma # head punct
 -- First build the verb and its complements and then add auxilaries (verb flection) to the phrase
 VP ::= V
 VP ::= NP V # obl head
+-- verbs that need the auxiliary する(suru), like 存在 する 
+VP ::= V suru # head aux
+VP ::= V2 suru # head aux
 --VP ::= aux # # 0.001
 -- Remember it's SOV order, verb always at the end
 VP ::= NP_acc V2 # obj head
@@ -71,18 +78,7 @@ VP ::= NP_dat NP_acc V2 # obl obj head
 -- With verbs like "go", "go to X" "X に(ni) 行く(iku)" : アメリカに行く(女の子) 
 -- and as any other similar adverbial
 VP ::= NP_dat V # obl head
---VP ::= NP_to V # obl head
-VP ::= VP V_Aux V_Aux? V_Aux? # head aux aux aux 
---e.g. 取りかえ れば *なら* なかっ ...
-VP ::= VP V_Aux Predet V_Aux # head aux fixed aux
--- remember to change here if VP_sconj doesn't work: before the Predet? had a "?"
---e.g. 待っ  て　*い*　ます
-VP ::= VP Sconj Predet V_Aux? # head mark fixed aux
---e.g. 言わ   れ    て     い     ます
-VP ::= VP V_Aux Sconj Predet V_Aux? # head aux mark fixed aux
---e.g.　さ　れ　て　いる 
-VP ::= VP V_Aux V_Aux Sconj Predet V_Aux # head aux aux mark fixed aux
--- Specifically for the progressive tense
+-- Progressive : ! ! ! 
 VP_sconj ::= VP V_Aux? Sconj # head aux mark
 -- VP with comma
 -- most likely going to have the て("TE") particle
@@ -98,16 +94,13 @@ VP ::= NP_loc VP # advmod head
 VP ::= NP_to VP # obl head
 -- Phrase acting as an adverbial
 --VP ::= Adv_C VP # obl head
--- TO DO:
--- VERB + する  (which is also classified a verb)...
-
+VP ::= AdvP VP # advcl head
+-- special : こと が できる (koto ga dekiru) the same as the potential form (not working)
+-- VP ::= V koto Adp_nom dekiru # head fixed case fixed
+-- VP ::= V2 koto Adp_nom dekiru # head fixed case fixed
 -- Adjective clause flexed
 Adj_S ::= NP_nom AP_flex # nsubj head
 Adj_S ::= NP_nom AP_flex comma # nsubj head punct
--- Adverbial function separated by comma
--- Adv_C ::= NP Adp comma # head case punct    -- なんとか　まで、から、と...
--- Adv_C ::= NP_dat comma # head punct     -- なんとか　に
--- Adv_C ::= NP_loc comma # head punct     -- なんとか　で
 
 -- Noun phrases
 NP ::= PN
@@ -130,7 +123,6 @@ NP_nom ::= NP Adp_nom comma # head case punct
 -- be careful with this: !!
 NP_nom ::= CN Adp_nom comma # head case punct
 NP_acc ::= NP Adp_acc # head case
---NP_acc ::= NP? NP Adp_acc # obl head case --⭐
 NP_dat ::= NP Adp_dat # head case
 NP_loc ::= NP Adp_loc # head case
 -- CN version
@@ -165,6 +157,7 @@ NP ::= CN Part # head mark
 NP ::= S CN # acl head
 -- special
 NP_to ::= NP Adp_to # head case
+NP_dat ::= NP_dat Adp_nom # head case
 -- for multiple "and" と modifiers
 NP ::= NP_to CN # nmod head
 NP ::= NP_to Adp_gen # head case
@@ -180,6 +173,8 @@ NP ::= Adv NP # advmod head -- ⭐️
 -- Dependent clauses
 -- S and VP may act as noun modifiers (acl) (みかん を 売っていた) 女の子 -> (VP) NP
 NP ::= VP NP # acl head
+-- be really carefull here ⭐️:
+NP ::= VP CN # acl head
 
 -- Adjectival phrases
 AP ::= A
@@ -198,11 +193,15 @@ AP ::= Adv AP # advmod head
 -- careful with tag "obl"
 AP ::= NP_to A # obl head
 
+-- Adverbials,    careful! :
+AdvP ::= AdV comma # head punct
+-- again, problem with punctuation detection here
+-- END
 
 -- POS tag configurations
-#pos AUX cop V_Aux neg
-#pos VERB V V2 V3 Predet yoru
-#pos NOUN N
+#pos AUX cop V_Aux
+#pos VERB V V2 V3 Predet yoru aru suru dekiru
+#pos NOUN N koto
 #pos ADJ A
 #pos PROPN PN
 #pos ADV IAdv AdV
@@ -233,7 +232,7 @@ AP ::= NP_to A # obl head
 #token Punct . 。？ ！ ? !
 #token Punct_appos  : ：
 #token Conj と も
-#token Sconj て って の  
+#token Sconj て って の
 #token Aconj く
 #token CConj また あるいは 又 ところ しかし 然し 一方 および 及び 更に さらに そして それ 其れ すなわち 即ち もしくは
 #token Num １ ２ ３ ４ ５ ６ ７ ８ ９ ０ 1 2 3 4 5 6 7 8 9 0
@@ -246,7 +245,10 @@ AP ::= NP_to A # obl head
 #token past た ました
 #token aru ある
 #token yoru よる
+#token suru する
+#token dekiru できる
 #token int か
+#token koto こと
 #token comma , 、
 #token colon : ：
 #token quote " 「 」
