@@ -39,7 +39,7 @@ A noun may modify another without the need for the particle "no" (genitive).
 
 Verb has polite and plain form.
 Verb has negative and non-negative forms.
-Verb tenses include: non-past(present & future), past, passive, causative, passive-causative.
+Verb tenses include: non-past(present & future), past, passive, potential, causative, passive-causative...
 Verb has progressive form in present or past.
 
 To build the progressive the "te" form of the verb is used.
@@ -105,6 +105,14 @@ Example:
 - I	(topic)	concert	in(loc)	she	to(dat)	rose	(object)	give.
 
 Something like: I (in the concert) (to she) a rose give (will give).
+
+Example:
+- It is impossible to cross that limit. / - Crossing that limit is impossible.
+- あの  境界  を  超える  こと  が  無理  です。
+- ano kyoukai wo koeru koto ga muri desu.
+- that limit (object) cross (nominalizer) (topic) impossible is(polite copula).
+
+Clausal subject can be build by ussing a sort of nominalizer (koto = thing), then the respective particle for the possition (subject or object) is added.
 
 - - - - - -
 
